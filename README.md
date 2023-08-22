@@ -12,7 +12,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 * Júlia Roberta de Souza
 * Tiago Henrique Oliveira Souza
-* Nome completo do aluno 3
+* Natali Xavier da Costa
 * Nome completo do aluno 4
 
 ## Orientador
