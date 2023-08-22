@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# LIFE DROP
 
 `CURSO`
 
@@ -13,7 +13,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Júlia Roberta de Souza
 * Tiago Henrique Oliveira Souza
 * Natali Xavier da Costa
-* Nome completo do aluno 4
+* Aline Azedias de Souza
 
 ## Orientador
 
