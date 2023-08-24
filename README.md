@@ -14,6 +14,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Tiago Henrique Oliveira Souza
 * Natali Xavier da Costa
 * Aline Azedias de Souza
+* Leonardo Guerra Melgaço
 
 ## Orientador
 
