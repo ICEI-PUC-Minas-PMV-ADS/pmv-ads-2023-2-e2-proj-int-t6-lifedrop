@@ -1,12 +1,12 @@
-# LIFE DROP
+# LifeDrop
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
 `DISCIPLINA`
 
-`SEMESTRE`
+`2023/2`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Uma aplicação que conecta doadores de sangue a bancos de sangue ou hospitais, permitindo que os doadores se registrem e encontrem locais de doação próximos.
 
 ## Integrantes
 
