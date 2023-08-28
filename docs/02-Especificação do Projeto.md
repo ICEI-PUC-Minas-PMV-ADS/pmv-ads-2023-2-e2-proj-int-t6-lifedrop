@@ -48,30 +48,29 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O sistema deve permitir que os usuários se registrem na plataforma, fornecendo informações pessoais como nome, data de nascimento, gênero, tipo sanguíneo, localização, estado de saúde e histórico de doenças preexistentes. | ALTA | 
+|RF-002| O sistema deve permitir que os usuários registrados façam login de forma segura na plataforma, utilizando e-mail e senha. | ALTA | 
+|RF-003| O sistema deve criar um perfil pessoal para cada doador. Esse perfil deve exibir as informações básicas do doador, incluindo seu histórico de doações anteriores, nível de elegibilidade e um lembrete para a próxima doação sugerida. | MÉDIA |
+|RF-004| O sistema deve disponibilizar aos doadores a capacidade de verificar o estoque de sangue disponível nos bancos de sangue. Isso ajudará os doadores a entender quais tipos sanguíneos são mais necessários. | MÉDIA | 
+|RF-005| O sistema deve permitir que os doadores pesquisem bancos de sangue próximos e agendem doações em datas e horários convenientes para eles. O sistema deve confirmar a disponibilidade das datas e horários escolhidos. | ALTA | 
+|RF-006| O sistema deve permitir que os doadores devem possam visualizar, modificar ou cancelar suas doações agendadas. Toda alteração deve ser registrada e confirmada pelo sistema.. | ALTA | 
+|RF-007| O sistema deve permitir que os doadores acessem o histórico completo de suas doações anteriores, incluindo datas, locais e quantidades doadas. A informação deve ser apresentada de forma clara. | MÉDIA |
+|RF-008| O sistema deve realizar uma verificação automática antes de permitir que um doador agende uma doação. Essa verificação deve confirmar se o doador atende aos requisitos de elegibilidade, incluindo a idade mínima e um intervalo adequado entre as doações. | ALTA |
+|RF-009| O sistema deve permitir que os administradores dos bancos de sangue registrem situações de emergência que necessitem de doadores com tipos sanguíneos específicos. Além disso, o sistema deve notificar os doadores relevantes e sugerir horários de agendamento para atender às necessidades emergenciais. | ALTA |
+|RF-010| O sistema deve proporcionar aos administradores dos bancos de sangue acesso a um painel administrativo integrado. Esse painel administrativo permitirá o gerenciamento eficaz de agendamentos, estoque de sangue e solicitações de doadores para situações emergenciais. | MÉDIA |
+|RF-011| O sistema deve oferecer um sistema de suporte para responder às dúvidas dos usuários. Isso pode ser implementado por meio de um sistema de chat ao vivo ou um formulário de contato. | MÉDIA | 
+
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|RNF-001| O site deve carregar completamente em menos de 3 segundos, mesmo em conexões de internet mais lentas. | ALTA | 
+|RNF-002|O site deve ser responsivo e adaptar-se adequadamente a diferentes dispositivos, tamanhos de tela e orientações. | ALTA |
+|RNF-003| Durante campanhas de doação de sangue ou situações de emergência o site deve ser capaz de lidar com um aumento significativo no tráfego sem perda de desempenho. | MÉDIA |
+|RNF-004| O site deve garantir que todas as informações pessoais fornecidas pelos usuários no momento do registro sejam armazenadas de forma segura. | ALTA |
+|RNF-005| O sistema de suporte deve garantir um tempo médio de resposta de menos de 1 hora para as dúvidas dos usuários, seja por meio de chat ao vivo ou formulário de contato.|  MÉDIA |
+|RNF-006| A interface do site deve ser intuitiva e de fácil navegação, permitindo aos usuários encontrar informações e realizar ações facilmente.|  MÉDIA |
 
 ## Restrições
 
