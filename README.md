@@ -15,6 +15,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Natali Xavier da Costa
 * Aline Azedias de Souza
 * Leonardo Guerra Melgaço
+* Luís Eduardo Vieira Chaves Paiva
 
 ## Orientador
 
