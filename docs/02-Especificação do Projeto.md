@@ -28,8 +28,15 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Ana Clara           | acessar informações de como funciona a doação de sangue           | me informar sobre o tema e me tornar uma doadora              |
+|Daniel              | saber aonde é o centro de doação mais próximo                     | para facilitar sua locomoção e poupar tempo |
+|Ana Clara           | acompanhar o estoque de sangue disponível nos bancos de sangue    | saber a necessidade de cada tipo sanguíneo para poder agendar a minha doação              |
+|Daniel              | ter um acesso a uma conta de usuário                              | para facilitar o preenchimento nos próximos agendamentos         |
+|Ana Clara           | poder gerenciar os meus agendamentos na plataforma                | ficar ciente com a data, local e a hora que será realizada a doação de sangue.              |
+|Daniel              | ser avisado quando puder doar de novo                     | para doar mais vezes no ano |
+|Ana Clara           | acessar a plataforma de doação de sangue tanto no celular quanto no computador          | facilitar o meu dia dia podendo gerenciar o meu registro de doadora de qualquer lugar e a qualquer momento              |
+|Daniel              | acessar o histórico de doações                     | para saber quantas vezes doei |
+
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
