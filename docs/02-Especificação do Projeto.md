@@ -60,12 +60,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| O sistema deve criar um perfil pessoal para cada doador. Esse perfil deve exibir as informações básicas do doador, incluindo seu histórico de doações anteriores, nível de elegibilidade e um lembrete para a próxima doação sugerida. | MÉDIA |
 |RF-004| O sistema deve disponibilizar aos doadores a capacidade de verificar o estoque de sangue disponível nos bancos de sangue. Isso ajudará os doadores a entender quais tipos sanguíneos são mais necessários. | MÉDIA | 
 |RF-005| O sistema deve permitir que os doadores pesquisem bancos de sangue próximos e agendem doações em datas e horários convenientes para eles. O sistema deve confirmar a disponibilidade das datas e horários escolhidos. | ALTA | 
-|RF-006| O sistema deve permitir que os doadores devem possam visualizar, modificar ou cancelar suas doações agendadas. Toda alteração deve ser registrada e confirmada pelo sistema.. | ALTA | 
+|RF-006| O sistema deve permitir que os doadores devem possam visualizar, modificar ou cancelar suas doações agendadas. Toda alteração deve ser registrada e confirmada pelo sistema. | ALTA | 
 |RF-007| O sistema deve permitir que os doadores acessem o histórico completo de suas doações anteriores, incluindo datas, locais e quantidades doadas. A informação deve ser apresentada de forma clara. | MÉDIA |
 |RF-008| O sistema deve realizar uma verificação automática antes de permitir que um doador agende uma doação. Essa verificação deve confirmar se o doador atende aos requisitos de elegibilidade, incluindo a idade mínima e um intervalo adequado entre as doações. | ALTA |
 |RF-009| O sistema deve permitir que os administradores dos bancos de sangue registrem situações de emergência que necessitem de doadores com tipos sanguíneos específicos. Além disso, o sistema deve notificar os doadores relevantes e sugerir horários de agendamento para atender às necessidades emergenciais. | ALTA |
 |RF-010| O sistema deve proporcionar aos administradores dos bancos de sangue acesso a um painel administrativo integrado. Esse painel administrativo permitirá o gerenciamento eficaz de agendamentos, estoque de sangue e solicitações de doadores para situações emergenciais. | MÉDIA |
-|RF-011| O sistema deve oferecer um sistema de suporte para responder às dúvidas dos usuários. Isso pode ser implementado por meio de um sistema de chat ao vivo ou um formulário de contato. | MÉDIA | 
 
 
 ### Requisitos não Funcionais
@@ -86,7 +85,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| O projeto não pode ser desenvolvido por terceiros que não fazem parte da equipe de desenvolvedores.|
 
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
