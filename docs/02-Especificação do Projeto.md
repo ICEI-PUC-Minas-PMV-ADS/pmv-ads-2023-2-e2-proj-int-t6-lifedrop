@@ -55,16 +55,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve permitir que os usuários se registrem na plataforma, fornecendo informações pessoais como nome, data de nascimento, gênero, tipo sanguíneo, localização, estado de saúde e histórico de doenças preexistentes. | ALTA | 
-|RF-002| O sistema deve permitir que os usuários registrados façam login de forma segura na plataforma, utilizando e-mail e senha. | ALTA | 
-|RF-003| O sistema deve criar um perfil pessoal para cada doador. Esse perfil deve exibir as informações básicas do doador, incluindo seu histórico de doações anteriores, nível de elegibilidade e um lembrete para a próxima doação sugerida. | MÉDIA |
-|RF-004| O sistema deve disponibilizar aos doadores a capacidade de verificar o estoque de sangue disponível nos bancos de sangue. Isso ajudará os doadores a entender quais tipos sanguíneos são mais necessários. | MÉDIA | 
-|RF-005| O sistema deve permitir que os doadores pesquisem bancos de sangue próximos e agendem doações em datas e horários convenientes para eles. O sistema deve confirmar a disponibilidade das datas e horários escolhidos. | ALTA | 
-|RF-006| O sistema deve permitir que os doadores devem possam visualizar, modificar ou cancelar suas doações agendadas. Toda alteração deve ser registrada e confirmada pelo sistema. | ALTA | 
-|RF-007| O sistema deve permitir que os doadores acessem o histórico completo de suas doações anteriores, incluindo datas, locais e quantidades doadas. A informação deve ser apresentada de forma clara. | MÉDIA |
-|RF-008| O sistema deve realizar uma verificação automática antes de permitir que um doador agende uma doação. Essa verificação deve confirmar se o doador atende aos requisitos de elegibilidade, incluindo a idade mínima e um intervalo adequado entre as doações. | ALTA |
-|RF-009| O sistema deve permitir que os administradores dos bancos de sangue registrem situações de emergência que necessitem de doadores com tipos sanguíneos específicos. Além disso, o sistema deve notificar os doadores relevantes e sugerir horários de agendamento para atender às necessidades emergenciais. | ALTA |
-|RF-010| O sistema deve proporcionar aos administradores dos bancos de sangue acesso a um painel administrativo integrado. Esse painel administrativo permitirá o gerenciamento eficaz de agendamentos, estoque de sangue e solicitações de doadores para situações emergenciais. | MÉDIA |
+|RF-001|O sistema deve possibilitar ao usuário se registrar na plataforma. | ALTA | 
+|RF-002| O sistema deve permitir ao usuário gerenciar o login. | ALTA | 
+|RF-003| O sistema deve permitir registrar e verificar o estoque disponível nos bancos de sangue. | MÉDIA |
+|RF-004| O sistema deve permitir ao doador gerenciar agendamentos. | ALTA | 
+|RF-005| O sistema deve permitir o acesso ao histórico completo de doações do doador. | MÉDIA | 
+|RF-006| O sistema deve verificar se o doador está apto para a doação antes de permitir que o doador agende uma doação. | ALTA | 
+|RF-007| O sistema deve permitir ao administrador dos bancos de sangue registrar emergências | ALTA |
+|RF-008| O sistema deve permitir ao administrador do banco de sangue acessar o painel administrativo integrado.  | MÉDIA |
 
 
 ### Requisitos não Funcionais
