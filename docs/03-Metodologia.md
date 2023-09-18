@@ -1,4 +1,3 @@
-
 # Metodologia
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
@@ -17,7 +16,7 @@ O projeto segue a seguinte convenção para o nome de branches:
 - `testing`: versão em testes do software
 - `(Nome)`: Branch de desenvolvimento do software para cada integrante
 
-Cada membro do grupo escreve sua parte do código em sua própria branch, na qual também corrige quaisquer erros causados pelo novo código. Depois disso, o novo código é mesclado na branch testing para corrigir quaisquer incompatibilidade com as modificações de outros integrantes, após corrigido e conferido se há incompatibilidade, o codigo é mesclado com a branch principal (Main).
+Cada membro do grupo escreve sua parte do código em sua própria branch, na qual também corrige quaisquer erros causados pelo novo código. Depois disso, o novo código é mesclado na branch testing para corrigir quaisquer incompatibilidade com as modificações de outros integrantes, após corrigido e conferido se não há incompatibilidade, o codigo é mesclado com a branch principal (Main).
 
 ????Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -99,16 +98,9 @@ Utilizaremos o Whatsapp para urgencias e solicitações de ajuda.
 Microsoft Teams foi escolhido para reuniões mais detalhadas, com divisão de tarefas e sobre as ideias do projeto.
 Figma foi selecionado para criação do layout e Wireframes.
 
----------------------
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
----------------------
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
+---------------------
 > **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
 > - [Slack](https://slack.com/)
 > - [Github](https://github.com/)
+---------------------
