@@ -3,7 +3,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+Todo o versionamento do projeto será feito via Git com repositório GitHub. Estamos utilizando a ferramenta Figma para desenvolver a parte do design e o ... para desenvolver todos os gráficos e fluxogramas do projeto. Quanto ao método de gestão, estamos utilizando o Kanban para controle das etapas, atividades e para fazer a gestão de times do projeto. A comunicação do grupo é feita atraves do aplicativo Whatsapp e em algumas reuniões feitas no Microsoft Teams.
 
 ## Controle de Versão
 
@@ -14,11 +14,12 @@ foi utilizado para hospedagem do repositório.
 O projeto segue a seguinte convenção para o nome de branches:
 
 - `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
 - `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+- `(Nome)`: Branch de desenvolvimento do software para cada integrante
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
+Cada membro do grupo escreve sua parte do código em sua própria branch, na qual também corrige quaisquer erros causados pelo novo código. Depois disso, o novo código é mesclado na branch testing para corrigir quaisquer incompatibilidade com as modificações de outros integrantes, após corrigido e conferido se há incompatibilidade, o codigo é mesclado com a branch principal (Main).
+
+??Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
 
 - `documentation`: melhorias ou acréscimos à documentação
@@ -26,7 +27,7 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
+??Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
 
 > **Links Úteis**:
 > - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
@@ -39,7 +40,22 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+Cada integrante do grupo está designado a sua devida função, sendo elas:
+
+*Product Owner*
+- 
+
+*Scrum Master*
+- 
+
+*Desenvolvedores*
+-
+-
+-
+
+*Design*
+-
+
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu 
