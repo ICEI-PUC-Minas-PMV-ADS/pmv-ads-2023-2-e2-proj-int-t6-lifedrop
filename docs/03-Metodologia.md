@@ -18,24 +18,17 @@ O projeto segue a seguinte convenção para o nome de branches:
 
 Cada membro do grupo escreve sua parte do código em sua própria branch, na qual também corrige quaisquer erros causados pelo novo código. Depois disso, o novo código é mesclado na branch testing para corrigir quaisquer incompatibilidade com as modificações de outros integrantes, após corrigido e conferido se não há incompatibilidade, o codigo é mesclado com a branch principal (Main).
 
-????Quanto à gerência de issues, o projeto adota a seguinte convenção para
+Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
 
 - `documentation`: melhorias ou acréscimos à documentação
 - `bug`: uma funcionalidade encontra-se com problemas
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
+- `help wanted`: Indica que um desenvolvedor deseja ajuda em um problema
+- `invalid`: Indica que um problema, pull request ou discussão já não é relevante
+- `question`: Indica que um problema, pull request ou discussão precisa de mais informações
 
-??Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
----------------------
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
----------------------
 
 ## Gerenciamento de Projeto
 
@@ -44,25 +37,18 @@ etiquetas:
 Cada integrante do grupo está designado a sua devida função, sendo elas:
 
 *Product Owner*
-- 
+- Júlia Roberta de Souza
 
 *Scrum Master*
-- 
+- Leonardo Guerra Melgaço
 
 *Desenvolvedores*
--
--
--
+- Tiago Henrique Oliveira Souza
+- Aline Azedias de Souza
+- Luís Eduardo Vieira Chaves Paiva
 
 *Design*
--
-
----------------------
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
----------------------
+- Natali Xavier da Costa
 
 ### Processo
 
@@ -74,13 +60,7 @@ O aplicativo "Trello" está sendo utilizado para organizar as atividades e proce
 - `In Review`: Tarefas concluidas que vão ser testadas.
 - `Done`: Tarefas concluidas e testadas, seram armazenadas nesta categoria.
 
----------------------
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
----------------------
+  INCLUIR IMAGEM DO KANBAN
 
 ### Ferramentas
 
@@ -97,10 +77,3 @@ Git e GitHub vão ser usados para versionamento da documentação e do codigo de
 Utilizaremos o Whatsapp para urgencias e solicitações de ajuda.
 Microsoft Teams foi escolhido para reuniões mais detalhadas, com divisão de tarefas e sobre as ideias do projeto.
 Figma foi selecionado para criação do layout e Wireframes.
-
-
----------------------
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
----------------------
