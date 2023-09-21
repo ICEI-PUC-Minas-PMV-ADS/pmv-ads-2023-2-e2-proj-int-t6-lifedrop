@@ -10,7 +10,7 @@ Os detalhes levantados nesse processo foram consolidados na forma de personas e 
 As personas levantadas durante o processo de entendimento do problema são apresentadas na Figuras que se seguem.
 
 ## `Ana Clara`
-iMAGEM | Ana Clara, 32 anos                                                                                     |
+<img src="/docs/img/Persona 1.png" width="150px"> | Ana Clara, 32 anos                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Ocupação                                                                                                                 | Dentista |
 | Aplicativos preferidos                                                                                                   | Intagram , Facebook, Whatsapp |
@@ -19,7 +19,7 @@ iMAGEM | Ana Clara, 32 anos                                                     
 | Frustrações?                                                                                                             | Desvalorização do trabalho e falta de tempo |
 
 ## `Daniel`
-iMAGEM | Daniel, 21 anos                                                                                     |
+<img src="/docs/img/Persona 2.png" width="150px"> | Daniel, 21 anos                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Ocupação                                                                                                                 | Analista de Sistemas |
 | Aplicativos preferidos                                                                                                   | Intagram, LinkedIn, Telegram e Tik Tok |
