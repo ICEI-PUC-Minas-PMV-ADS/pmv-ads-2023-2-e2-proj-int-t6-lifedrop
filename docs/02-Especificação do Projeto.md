@@ -13,7 +13,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 <img src="/docs/img/Persona 1.png" width="150px"> | Ana Clara, 32 anos                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Ocupação                                                                                                                 | Dentista |
-| Aplicativos preferidos                                                                                                   | Intagram , Facebook, Whatsapp |
+| Aplicativos preferidos                                                                                                   | Instagram , Facebook, Whatsapp e LinkedIn |
 | Motivações                                                                                                               | Abrir uma clinica maior, para alcançar a estabilidade financeira|
 | Seus Hobbies                                                                                                             | Ler livros, ir a teatros e fazer viagens |
 | Frustrações?                                                                                                             | Desvalorização do trabalho e falta de tempo |
@@ -22,7 +22,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 <img src="/docs/img/Persona 2.png" width="150px"> | Daniel, 21 anos                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Ocupação                                                                                                                 | Analista de Sistemas |
-| Aplicativos preferidos                                                                                                   | Intagram, LinkedIn, Telegram e Tik Tok |
+| Aplicativos preferidos                                                                                                   | Instagram, LinkedIn, Telegram e Tik Tok |
 | Motivações                                                                                                               | Ser efetivado e conseguir uma renda extra, comprar seu primeiro carro |
 | Seus Hobbies                                                                                                             | Jogar video game, cinema e cozinhar |
 | Frustrações?                                                                                                             | Dificuldade de Locomoção e falta de tempo |
