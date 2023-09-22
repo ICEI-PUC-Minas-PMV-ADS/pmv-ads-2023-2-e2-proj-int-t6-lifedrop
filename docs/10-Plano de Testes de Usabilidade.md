@@ -28,11 +28,23 @@ Analisar o design e performance da aplicação interativa, a partir de testes ex
 
 Abrange a todos usuarios que queiram acessar a aplicação, mas com o foco em: doadores de sange; hospitais e bancos de sangue.
 
+## Testes a serem realizados
 
+|ID    | Testes Praticos | 
+|------|-----------------------------------------|
+|RF-001| Acessar o site no computado ou dispositivo movel |
+|RF-002| Cadastrar uma conta e efetuar o login |
+|RF-003| Acessar "Orientação sobre doação" |
+|RF-004| Acessar "Agende sua doação" |
+|RF-005| Preencher os dados e confirmar o agendamento |
+|RF-006| Acessar "Meu perfil" |
+|RF-007| Alterar informações pessoais e/ou Tipo sanguineo |
+|RF-008| Clicar em "Sair" |
 
-Será feito uma sequencia de ações em nosso site, para depois responder ao nosso questionario online.
-
-
+|ID    | Testes de Responsividades | 
+|------|-----------------------------------------|
+|RF-001| Entrar na aplicação por outro navegador |
+|RF-002| Diminuir o tamanho do navegador |
 
 ### Questionário 
 
