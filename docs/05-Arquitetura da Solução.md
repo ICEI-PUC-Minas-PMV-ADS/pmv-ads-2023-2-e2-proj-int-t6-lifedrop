@@ -8,7 +8,6 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 <src=/docs/img/"diagramadeclasses.jpeg">
 
-
 ## Modelo ER (Projeto Conceitual)
 
 ![diagramaer](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/130505215/f4a2a0ec-d314-4b59-b59b-d10591e14257)
