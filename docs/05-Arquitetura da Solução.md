@@ -21,9 +21,9 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Tecnologias Utilizadas
 
-Lucidchart
-Figma
-GitHub
+- Lucidchart
+- Figma
+- GitHub
 
 ## Hospedagem
 
