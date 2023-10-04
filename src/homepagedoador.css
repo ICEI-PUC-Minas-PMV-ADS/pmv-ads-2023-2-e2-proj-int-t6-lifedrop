@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2? family= Playfair+Display & family= Roboto:wght@100 & display=swap');
+* {
+    margin: 300;
+    padding: 30;
+    box-sizing: border;
+}
+
+body {
+    font-size: 100%;
+    background: white ;
+}
+ .cabecalho {
+    display: flex;
+    background-color: rgba(242, 242, 242, 1);
+    border: rgb(182, 182, 182);
+    width: 1440px;
+    height: 80px;
+    top: 65px;
+    left: 144px;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 4px 4px 0px #00000040;
+ }
+
+ .cabecalho-imagem {
+    height: 60px;
+    margin: 26px;
+    align-self: center;
+ }
+
+ .cabecalho-menu {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+ }
+
+ .cabecalho-menu-item {
+    display: flex;
+    font-family: roboto;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-weight: 50px;
+    text-shadow: 0.1em 0.2em 0.9em;
+ }
+
+ 
