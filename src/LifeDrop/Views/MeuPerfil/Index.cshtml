@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@section css {
+    <link rel="stylesheet" href="@Url.Content("~/css/meuperfil.css")" type="text/css"/>
+}
+
+<body>
+    <h4> Informações pessoais</h4>
+
+
+    <class formularioperfil>
+        <form id="formPerfil">
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <label for="f_id">Nome Completo</label>
+                    <input type="text" class="form-control" maxlength="100">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <label for="f_id">E-mail</label>
+                    <input type="text" class="form-control" maxlength="100">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <label for="f_id">Telefone</label>
+                    <input type="text" class="form-control" id="telefoneInput" maxlength="100">
+                </div>
+
+
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-4">
+                    <label for="f_id">Gênero</label>
+                    <select class="form-control" id="generoSelect">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+        </form>
+
+        <button onclick="insert_or_update()" id="btn_save" type="button"
+                class="btn btn-primary">
+            Salvar
+        </button>
+
+
+    </class>
+
+
+</body>
+
+@section Scripts {
+    <script>
+        $('#telefoneInput').mask('(00) 0 0000.0000', { placeholder: "(__)_ ____ ____" });
+    </script>
+}
