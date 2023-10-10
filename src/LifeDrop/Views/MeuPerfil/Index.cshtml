@@ -3,61 +3,116 @@
 }
 
 @section css {
-    <link rel="stylesheet" href="@Url.Content("~/css/meuperfil.css")" type="text/css"/>
+    <link rel="stylesheet" href="@Url.Content("~/css/meuperfil.css")" type="text/css" />
 }
 
 <body>
-    <h4> Informações pessoais</h4>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Contêiner Infos e tipagem com tamanho 4 -->
+            <div class="col-sm-4">
+                <h5 class="text-center">Informações pessoais</h5>
+                <div class="formularioperfil">
+                    <form id="formPerfil">
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <label for="f_id">Nome Completo</label>
+                                <input type="text" class="form-control" maxlength="100">
+                            </div>
+                        </div>
 
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label for="f_id">E-mail</label>
+                                <input type="text" class="form-control" maxlength="100">
+                            </div>
+                        </div>
 
-    <class formularioperfil>
-        <form id="formPerfil">
-            <div class="row mt-4">
-                <div class="col-sm-4">
-                    <label for="f_id">Nome Completo</label>
-                    <input type="text" class="form-control" maxlength="100">
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label for="f_id">Telefone</label>
+                                <input type="text" class="form-control" id="telefoneInput" maxlength="100">
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label for="f_id">Gênero</label>
+                                <select class="form-control" id="generoSelect">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 text-end">
+                            <div class="col-sm-12">
+                                <button onclick="insert_or_update()" id="btn_save" type="button" class="btn btn-primary">
+                                    Salvar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <h5 class="text-center">Tipo sanguíneo</h5>
+                <div class="formularioTipagem">
+                    <form id="formTipagem">
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <label for="f_id">Tipo</label>
+                                <select class="form-control" id="tipoSelect">
+                                    <option value="masculino">A</option>
+                                    <option value="feminino">B</option>
+                                    <option value="outro">AB</option>
+                                    <option value="outro">O</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label for="f_id">Fator Rh (positivo ou negativo)</label>
+                                <select class="form-control" id="tipoSelect">
+                                    <option value="masculino">Positivo (+)</option>
+                                    <option value="feminino">Negativo (-)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 text-end">
+                            <div class="col-sm-12">
+                                <button onclick="insert_or_update()" id="btn_save" type="button" class="btn btn-primary">
+                                    Salvar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            <div class="row mt-4">
-                <div class="col-sm-4">
-                    <label for="f_id">E-mail</label>
-                    <input type="text" class="form-control" maxlength="100">
+            <!-- Contêiner "Meus agendamentos" com tamanho 8 -->
+            <div class="col-sm-8">
+                <div class="agendaUsario">
+                    <h5 class="text-center">Meus agendamentos</h5>
+                    <div class="row mt-4">
+                        <div class="col-sm-10 mx-auto">
+                            <div class="card ml-6">
+                                <div class="px-2 my-2">
+                                    <p class="card-text">Dia: 10 de Outubro de 2023</p>
+                                    <p class="card-text">Horário: 14:00</p>
+                                    <p class="card-text">Endereço: Rua Exemplo, 123, cep: 00000-000 </p>
+                                </div>
+                                <div class="text-end px-2 my-2">
+                                    <button type="button" class="btn btn-primary">Alterar</button>
+                                    <button type="button" class="btn btn-danger">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="row mt-4">
-                <div class="col-sm-4">
-                    <label for="f_id">Telefone</label>
-                    <input type="text" class="form-control" id="telefoneInput" maxlength="100">
-                </div>
-
-
-            </div>
-            <div class="row mt-4">
-                <div class="col-sm-4">
-                    <label for="f_id">Gênero</label>
-                    <select class="form-control" id="generoSelect">
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-            </div>
-
-
-
-        </form>
-
-        <button onclick="insert_or_update()" id="btn_save" type="button"
-                class="btn btn-primary">
-            Salvar
-        </button>
-
-
-    </class>
-
-
+        </div>
+    </div>
 </body>
 
 @section Scripts {
