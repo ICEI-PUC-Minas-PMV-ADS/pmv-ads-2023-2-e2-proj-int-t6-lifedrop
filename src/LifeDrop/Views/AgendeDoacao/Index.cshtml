@@ -4,5 +4,100 @@
 @{
 }
 
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <form id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-9">
+                        <label for="f_titulo">Estado <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">Selecione seu estado</option>
+                        </select>
+                    </div>
+                </div>
 
-<h1>Agende sua doação</h1>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-9">
+                        <label for="f_titulo">Município <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">Selecione seu município</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-9">
+                        <label for="f_titulo">Unidade <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">Selecione a unidade</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-5">
+                        <label for="f_titulo">Escolha o dia <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">...</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 justify-content-center">
+                        <label for="f_titulo">Escolha o horário <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-9">
+                        <label for="f_titulo">Nome completo <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-9">
+                        <label for="f_titulo">E-mail<span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-sm-3">
+                        <label for="f_titulo">CPF<span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">...</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 justify-content-center">
+                        <label for="f_titulo">Telefone<span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">...</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 justify-content-center">
+                        <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
+                        <select class="form-control" id="tipoSelect">
+                            <option value="">...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-5 text-center">
+                    <div class="col-sm-12" style="margin-bottom: 15px;">
+                        <button onclick="insert_or_update()" id="btn_agendar" type="button" class="btn btn-primary">
+                            Agendar doação
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
