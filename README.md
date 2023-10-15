@@ -1,10 +1,17 @@
 # LifeDrop
+<div align="center">
+<img  src="/src/LifeDrop/wwwroot/images/logo.png">
+</div>
 
+<div align="center">
+  
 `Análise e Desenvolvimento de Sistemas`
 
 `Projeto: Desenvolvimento de uma Aplicação Interativa`
 
 `2023/2`
+</div>
+
 
 Uma aplicação que conecta doadores de sangue a bancos de sangue ou hospitais, permitindo que os doadores se registrem e encontrem locais de doação próximos.
 
