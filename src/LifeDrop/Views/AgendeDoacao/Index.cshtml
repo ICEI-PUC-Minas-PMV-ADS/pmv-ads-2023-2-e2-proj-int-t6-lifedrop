@@ -53,39 +53,29 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Nome completo <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
-                            <option value=""></option>
-                        </select>
+                        <input type="text" class="form-control" id="nomelInput">
                     </div>
                 </div>
 
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">E-mail<span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
-                            <option value=""></option>
-                        </select>
+                        <input type="text" class="form-control" id="emailInput">                        
                     </div>
                 </div>
 
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-3">
                         <label for="f_titulo">CPF<span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
-                            <option value="">...</option>
-                        </select>
+                        <input type="text" class="form-control" id="cpfInput">                       
                     </div>
                     <div class="col-sm-3 justify-content-center">
                         <label for="f_titulo">Telefone<span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
-                            <option value="">...</option>
-                        </select>
+                        <input type="text" class="form-control" id="telefoneInput">
                     </div>
                     <div class="col-sm-3 justify-content-center">
                         <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
-                            <option value="">...</option>
-                        </select>
+                        <input type="text" class="form-control" id="nascimentoInput">                        
                     </div>
                 </div>
 
@@ -96,8 +86,91 @@
                         </button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
+
+
+    <div class="container mt-5">
+        <div class="row text-center d-flex align-items-center">
+            <div class="col-sm-12">
+                <h5 class="text-center">Estoque de sangue no seu município</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2 mx-auto">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">Posto de coleta 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">O+</td>
+                            <td class="text-center">Critico</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">O-</td>
+                            <td class="text-center">Alerta</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">A+</td>
+                            <td class="text-center">Critico</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">A-</td>
+                            <td class="text-center">Adequado</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">B+</td>
+                            <td class="text-center">Estável</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">B-</td>
+                            <td class="text-center">Alerta</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">AB+</td>
+                            <td class="text-center">Adequado</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">AB-</td>
+                            <td class="text-center">Critico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-3 d-flex align-items-center">
+                <p class="text-center"><b>Saiba o melhor momento para doar:</b></p>
+            </div>
+            <div class="col-12 col-md-5">
+                <ul class="list-unstyled">
+                    <li><u><b>Crítico:</b></u> Agende a doação o quanto antes</li>
+                    <li><u><b>Alerta:</b></u> Agende a doação nesta semana</li>
+                    <li><u><b>Adequado:</b></u> Agende a doação na próxima semana</li>
+                    <li><u><b>Estável:</b></u> Aguarde 10 dias para agendar a doação</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
+
+@section Scripts {
+    <script>
+        $('#telefoneInput').mask('(00)000000000', { placeholder: "(__)_ ____ ____" });
+        $('#nascimentoInput').mask('00/00/0000', {placeholder: "__/__/____"} );
+        $('#cpfInput').mask('000.000.000-00', {placeholder: "___.___.___-__"} );
+    </script>
+
+}
