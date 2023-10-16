@@ -2,9 +2,7 @@
     ViewData["Title"] = "Index";
 }
 
-@section css {
-    <link rel="stylesheet" href="@Url.Content("~/css/meuperfil.css")" type="text/css" />
-}
+
 
 <body>
     <div class="container mt-4">
@@ -17,21 +15,21 @@
                         <div class="row mt-4">
                             <div class="col-sm-12">
                                 <label for="f_id">Nome Completo</label>
-                                <input type="text" class="form-control" maxlength="100">
+                                <input type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
                                 <label for="f_id">E-mail</label>
-                                <input type="text" class="form-control" maxlength="100">
+                                <input type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
                                 <label for="f_id">Telefone</label>
-                                <input type="text" class="form-control" id="telefoneInput" maxlength="100">
+                                <input type="text" class="form-control" id="telefoneInput">
                             </div>
                         </div>
 
@@ -114,6 +112,8 @@
         </div>
     </div>
 </body>
+
+
 
 @section Scripts {
     <script>
