@@ -4,11 +4,7 @@ namespace LifeDrop.Controllers
 {
     public class UsuarioController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+       
         public IActionResult Login()
         {
             return View("~/Views/Login/Index.cshtml");
