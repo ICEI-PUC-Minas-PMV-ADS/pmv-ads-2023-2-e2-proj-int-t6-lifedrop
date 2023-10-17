@@ -4,7 +4,7 @@ namespace LifeDrop.Controllers
 {
     public class AdministradorController : Controller
     {
-        public IActionResult Index()
+        public IActionResult PainelAdministrador()
         {
             return View("~/Views/PainelAdministrador/Index.cshtml");
         }

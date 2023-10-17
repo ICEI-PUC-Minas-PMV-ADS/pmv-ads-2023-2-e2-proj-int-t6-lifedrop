@@ -1,3 +1,6 @@
+using LifeDrop.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace LifeDrop
 {
     public class Program
@@ -8,6 +11,9 @@ namespace LifeDrop
 
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
