@@ -8,8 +8,15 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | tarefas.shtml / tarefas.cs / controllertarefas.cs | 
-|RF-002| Emitir um relatório de tarefas no mês   | relatorio.shtml |
+|RF-001| O sistema deve possibilitar ao usuário se registrar na plataforma. | CadastrarConta/index.cshtml  / site.css / UsuarioController.cs  | 
+|RF-002| O sistema deve permitir ao usuário gerenciar o login. | Login/index.shtml / site.css / UsuarioController.cs |
+|RF-003| O sistema deve permitir registrar e verificar o estoque disponível nos bancos de sangue. | AgendeDoacao/index.cshtml / site.css / AgendeDoacaoController.cs |
+|RF-004| O sistema deve permitir ao doador gerenciar agendamentos. | MeuPerfil/index.cshtml / site.css / MeuPerfilController.cs| 
+|RF-005| O sistema deve permitir o acesso ao histórico completo de doações do doador. | MeuPerfil/index.cshtml / site.css / MeuPerfilController.cs| 
+|RF-006| O sistema deve verificar se o doador está apto para a doação antes de permitir que o doador agende uma doação. | AgendeDoacao/index.cshtml / site.css / AgendeDoacaoController.cs | 
+|RF-007| O sistema deve permitir ao administrador dos bancos de sangue registrar emergências |AgendamentoAdministrador/index.cshtml / site.css / AdministradorController.cs |
+|RF-008| O sistema deve permitir ao administrador do banco de sangue acessar o painel administrativo integrado.  |PainelAdministrador/index.cshtml / site.css / AdministradorController.cs|
+
 
 # Instruções de acesso
 
