@@ -15,13 +15,12 @@ CT - 03 - Gerenciar banco de sangue
 <img src="/docs/img/estoque.png"></img>
 
 
-## Tela de agendamento de doações
+## Tela de Meu Perfil
 
 CT - 04 - Gerenciar agendamentos
 <ul>
   <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue gerenciar e agendar seu agendamento.</li>
-  <li><strong>Resultado</strong>: Botão de agendamento nao esta funcionando</li>
+  <li><strong>Resultado</strong>: Função não implementada ainda</li>
   </ul>
   
-
-<img src="/docs/img/agendamento.png"></img>
+<img width="954" alt="GerenciarAgendamento" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/fb55b34d-b1c8-44d6-8445-e9297b6e7636">
