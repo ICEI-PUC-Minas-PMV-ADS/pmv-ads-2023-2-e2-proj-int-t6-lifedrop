@@ -2,4 +2,93 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Painel</h1>
+<div class="container">
+
+    <h4>Informações do banco de sangue</h4>
+    <div>
+        <input type="text" placeholder="Nome da unidade" id="p-input">
+    </div>
+    <br>
+    <div>
+        <input type="email" placeholder="E-mail" id="p2-input">
+
+    </div>
+    <br>
+    <div>
+        <input type="text" placeholder="Telefone" id="p3-input">
+
+    </div>
+    <br>
+    <div>
+        <input type="text" placeholder="Endereço" id="p4-input">
+    </div>
+    <br>
+    <button id="button-1">Salvar</button>
+</div>
+
+<div class="box">
+    <h4 id="titulo-2">Solicitar doação emergencial</h4>
+    <fieldset id="field">
+        <legend>Tipo Sanguíneo</legend>
+        <div>
+            <br>
+            <label for=""></label>
+            <select name="" id="list">
+                <option value="">O+</option>
+                <option value="">O-</option>
+                <option value="">A+</option>
+                <option value="">A-</option>
+                <option value="">B+</option>
+                <option value="">B-</option>
+                <option value="">AB+</option>
+                <option value="">AB-</option>
+            </select>
+
+        </div>
+        <br>
+        <button id="button-2">Soliciar</button>
+
+    </fieldset>
+</div>
+            
+<h2 id="titulo-3">Posto de Coleta</h2>
+<div class="tabela">
+        <table class="tabble">
+            <tr>
+                <th>Tipo Sanguíneo</th>
+                <th>Estoque</th>
+            </tr>
+            <tr>
+                <td><strong>O+</strong></td>
+                <td><button>Critico</button></td>
+            </tr>
+            <tr>
+                <td><strong>O-</strong></td>
+                <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+                <td><strong>A+</strong></td>
+                <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+                <td><strong>A-</strong></td>
+                <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+            <td><strong>A-</strong></td>
+            <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+            <td><strong>A-</strong></td>
+            <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+            <td><strong>A-</strong></td>
+            <td><button>Estoque</button></td>
+            </tr>
+            <tr>
+            <td><strong>A-</strong></td>
+            <td><button>Estoque</button></td>
+            </tr>
+        </table>
+</div>
