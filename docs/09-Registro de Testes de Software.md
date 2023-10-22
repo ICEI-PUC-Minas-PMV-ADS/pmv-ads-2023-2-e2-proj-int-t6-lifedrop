@@ -24,3 +24,13 @@ CT - 04 - Gerenciar agendamentos
   </ul>
   
 <img width="954" alt="GerenciarAgendamento" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/fb55b34d-b1c8-44d6-8445-e9297b6e7636">
+
+## Tela de Meu Perfil
+
+CT - 04 - Acessar histórico de doações 
+<ul>
+  <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue gerenciar e agendar seu agendamento.</li>
+  <li><strong>Resultado</strong>: O histórico de doações está visível</li>
+  </ul>
+  
+<img width="954" alt="GerenciarAgendamento" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/fb55b34d-b1c8-44d6-8445-e9297b6e7636">
