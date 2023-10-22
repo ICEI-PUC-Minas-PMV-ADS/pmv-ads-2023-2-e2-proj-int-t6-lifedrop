@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LifeDrop.Models.Doador
+
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -9,84 +11,100 @@
             <div class="col-sm-4">
                 <h5 class="text-center">Informações pessoais</h5>
                 <div class="formularioperfil">
-                    <form id="formPerfil">
+                    <form asp-action="Salvar" id="formPerfil">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdDoador" />
+                        <input type="hidden" asp-for="IdUsuario" />
                         <div class="row mt-4">
                             <div class="col-sm-12">
-                                <label for="f_id">Nome Completo</label>
-                                <input type="text" class="form-control">
+                                <label asp-for="Nome">Nome Completo</label>
+                                <input asp-for="Nome" type="text" class="form-control">
+                                <span asp-vallidation-for="Nome" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
-                                <label for="f_id">E-mail</label>
-                                <input type="text" class="form-control">
+                                <label asp-for="Email">E-mail</label>
+                                <input asp-for="Email" type="text" class="form-control">
+                                <span asp-vallidation-for="Email" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
-                                <label for="f_id">Telefone</label>
-                                <input type="text" class="form-control" id="telefoneInput">
+                                <label asp-for="Telefone">Telefone</label>
+                                <input asp-for="Telefone" type="text" class="form-control" id="telefoneInput">
+                                <span asp-vallidation-for="Telefone" class="text-danger"></span>
+
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
-                                <label for="f_id">Gênero</label>
-                                <select class="form-control" id="generoSelect">
+                                <label asp-for="Genero">Gênero</label>
+                                <select asp-for="Genero" class="form-control" id="Genero">
+                                    <option value="">Selecione</option>
                                     <option value="masculino">Masculino</option>
                                     <option value="feminino">Feminino</option>
                                     <option value="outro">Outro</option>
                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="row mt-2 text-end">
-                            <div class="col-sm-12">
-                                <button onclick="insert_or_update()" id="btn_save" type="button" class="btn btn-primary">
-                                    Salvar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <h5 class="text-center">Tipo sanguíneo</h5>
-                <div class="formularioTipagem">
-                    <form id="formTipagem">
-                        <div class="row mt-4">
-                            <div class="col-sm-12">
-                                <label for="f_id">Tipo</label>
-                                <select class="form-control" id="tipoSelect">
-                                    <option value="masculino">A</option>
-                                    <option value="feminino">B</option>
-                                    <option value="outro">AB</option>
-                                    <option value="outro">O</option>
-                                </select>
+                                <span asp-vallidation-for="Genero" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
-                                <label for="f_id">Fator Rh (positivo ou negativo)</label>
-                                <select class="form-control" id="tipoSelect">
-                                    <option value="masculino">Positivo (+)</option>
-                                    <option value="feminino">Negativo (-)</option>
-                                </select>
+                                <label asp-for="DataNasc">Data de nascimento</label>
+                                <input asp-for="DataNasc" type="text" class="form-control" id="nascimentoInput">
+                                <span asp-vallidation-for="DataNasc" class="text-danger"></span>
                             </div>
                         </div>
 
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label asp-for="CPF">CPF</label>
+                                <input asp-for="CPF" type="text" class="form-control" id="cpfInput">
+                                <span asp-vallidation-for="CPF" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <label asp-for="Endereco">Endereço</label>
+                                <input asp-for="Endereco" type="text" class="form-control" id="cpfInput">
+                                <span asp-vallidation-for="Endereco" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <label asp-for="TipoSanguineo">Tipo sanguíneo</label>
+                                <select asp-for="TipoSanguineo" class="form-control" id="tipoSelect">
+                                    <option value="A-">A-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="O+">O+</option>
+                                </select>
+                                <span asp-vallidation-for="TipoSanguineo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
                         <div class="row mt-2 text-end">
                             <div class="col-sm-12">
-                                <button onclick="insert_or_update()" id="btn_save" type="button" class="btn btn-primary">
+                                <button id="btn_save" type="submit" class="btn btn-primary">
                                     Salvar
                                 </button>
                             </div>
                         </div>
                     </form>
-                </div>
+                </div>                            
             </div>
-            <!-- Contêiner "Meus agendamentos" com tamanho 8 -->
             <div class="col-sm-8">
                 <div class="agendaUsario">
                     <h5 class="text-center">Meus agendamentos</h5>
@@ -107,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>     
     </div>
 </body>
 
@@ -116,5 +134,7 @@
 @section Scripts {
     <script>
         $('#telefoneInput').mask('(00) 0 0000.0000', { placeholder: "(__)_ ____ ____" });
+        $('#nascimentoInput').mask('00/00/0000', { placeholder: "__/__/____" });
+        $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
     </script>
 }
