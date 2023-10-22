@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 30px;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 40%;
 }
 
@@ -46,8 +46,9 @@ fieldset {
     white-space: nowrap;
     border: 3px solid;
     padding: 45px;
-    padding-left: 86px;
-    padding-right: 100px;
+    padding-left: 80px;
+    padding-right: 120px;
+ 
 }
 
 #titulo-2 {
@@ -66,12 +67,12 @@ fieldset {
     padding-bottom: 2%;
 }
 .tabble {
-    font-size: 21px;
+    font-size: 20px;
     line-height: 40px;
 }
 
 #titulo-3 {
     position: absolute;
-    right: 100%;
+    right: 102%;
     white-space: nowrap;
 }
