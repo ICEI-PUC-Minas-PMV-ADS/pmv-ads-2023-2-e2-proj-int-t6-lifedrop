@@ -4,9 +4,24 @@
 
 Para cada caso de teste definido no Plano de Testes de Software, realize o registro das evidências dos testes feitos na aplicação pela equipe, que comprovem que o critério de êxito foi alcançado (ou não!!!). Para isso, utilize uma ferramenta de captura de tela que mostre cada um dos casos de teste definidos (obs.: cada caso de teste deverá possuir um vídeo do tipo _screencast_ para caracterizar uma evidência do referido caso).
 
-## Avaliação
+## Tela de estoque banco de sangue
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+CT - 03 - Gerenciar banco de sangue
+<ul>
+  <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue gerenciar e visualizar banco de sangue.</li>
+  <li><strong>Resultado</strong>: O estoque de sangue está visivel</li>
+  </ul>
+    
+<img src="/docs/img/estoque.png"></img>
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+
+## Tela de agendamento de doações
+
+CT - 04 - Gerenciar agendamentos
+<ul>
+  <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue gerenciar e agendar seu agendamento.</li>
+  <li><strong>Resultado</strong>: Botão de agendamento nao esta funcionando</li>
+  </ul>
+  
+
+<img src="/docs/img/agendamento.png"></img>
