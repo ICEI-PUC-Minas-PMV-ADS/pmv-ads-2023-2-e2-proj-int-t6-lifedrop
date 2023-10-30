@@ -1,0 +1,117 @@
+﻿@model LifeDrop.Models.BancoDeSangue
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h3 id="titulo-1">Informações do banco de sangue</h3>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeUnidade" class="control-label"></label>
+                <input asp-for="NomeUnidade" class="form-control" />
+                <span asp-validation-for="NomeUnidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-success">Voltar</a>
+            </div>
+        </form>
+    </div>
+ </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<h3 id="titulo-3">Posto de Coleta</h3>
+<div class="tabela">
+    <table class="tabble">
+        <tr>
+            <th>Tipo Sanguíneo</th>
+            <th>Estoque</th>
+        </tr>
+        <tr>
+            <td><strong>O+</strong></td>
+            <td><button>Critico</button></td>
+        </tr>
+        <tr>
+            <td><strong>O-</strong></td>
+            <td><button>Alerta</button></td>
+        </tr>
+        <tr>
+            <td><strong>A+</strong></td>
+            <td><button>Adequado</button></td>
+        </tr>
+        <tr>
+            <td><strong>A-</strong></td>
+            <td><button>Alerta</button></td>
+        </tr>
+        <tr>
+            <td><strong>B+</strong></td>
+            <td><button>Adequado</button></td>
+        </tr>
+        <tr>
+            <td><strong>B-</strong></td>
+            <td><button>Alerta</button></td>
+        </tr>
+        <tr>
+            <td><strong>AB+</strong></td>
+            <td><button>Estável</button></td>
+        </tr>
+        <tr>
+            <td><strong>AB-</strong></td>
+            <td><button>Alerta</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="box">
+    <h3 id="titulo-2">Solicitar doação emergencial</h3>
+    <fieldset id="field">
+        <legend>Tipo Sanguíneo</legend>
+        <div>
+            <br>
+            <label for=""></label>
+            <select name="" id="list">
+                <option value="">O+</option>
+                <option value="">O-</option>
+                <option value="">A+</option>
+                <option value="">A-</option>
+                <option value="">B+</option>
+                <option value="">B-</option>
+                <option value="">AB+</option>
+                <option value="">AB-</option>
+            </select>
+
+        </div>
+        <br>
+        <button id="button-2" asp-controller="PainelAdministrador" asp-action="Agendamentos">Solicitar</button>
+
+    </fieldset>
+</div>

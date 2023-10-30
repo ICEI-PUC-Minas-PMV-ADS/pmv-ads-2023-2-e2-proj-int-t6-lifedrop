@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\PainelAdministrador\**" />
     <Compile Remove="wwwroot\lib\NewFolder\**" />
+    <Content Remove="Views\PainelAdministrador\**" />
     <Content Remove="wwwroot\lib\NewFolder\**" />
+    <EmbeddedResource Remove="Views\PainelAdministrador\**" />
     <EmbeddedResource Remove="wwwroot\lib\NewFolder\**" />
+    <None Remove="Views\PainelAdministrador\**" />
     <None Remove="wwwroot\lib\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\PainelAdministrador.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.22" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.19" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.19">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.21">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
