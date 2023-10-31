@@ -17,29 +17,26 @@
                                 <div class="col m-3">
                                     <form>
                                         <div class="row justify-content-center">
-                                            <div class="w-75 mb-1">
+                                            <div class="w-80 mb-1">
                                                 <input type="email" class="form-control" name="email" placeholder="E-mail" required id="E-mail">
                                             </div>
                                         </div>
-
                                         <div class="row justify-content-center">
-                                            <div class="w-75 mb-1">
+                                            <div class="w-80 mb-1">
                                                 <input type="password" name="password" class="form-control" placeholder="Senha" required id="password">
                                             </div>
                                         </div>
-
                                         <div class="row justify-content-center">
-                                            <div class="w-75 ">
+                                            <div class="w-80 ">
                                                 <select name="origem" id="origem" class="form-select" aria-label="teste">
-                                                    <option selected>Origem</option>
-                                                    <option value="1">Um</option>
-                                                    <option value="2">Dois</option>
-                                                    <option value="3">Tres</option>
+                                                    <option selected>Selecione o usuario</option>
+                                                    <option value="1">Doador</option>
+                                                    <option value="2">Banco de Sangue</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center">
-                                            <div class="w-75 mb-2">
+                                            <div class="w-80 mb-1">
                                                 <div class="form-check">
                                                     <input type="checkbox" name="remember" id="remember" class="form-check-input">
                                                     <label for="remember" class="form-check-label">Manter conectado</label>
@@ -47,16 +44,13 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="w-50 align-items-center text-center">
-                                                <button type="submit" class="btn btn-primary w-75">Entrar</button>
-                                            </div>
-                                            <div class="w-50 align-items-center text-center ">
-                                                <button type="button" class="btn btn-primary w-75">Registrar</button>
+                                            <div class="w-80 mb-2 align-items-center text-center">
+                                                <button type="submit" class="btn btn-primary w-50">Entrar</button>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center text-end">
-                                            <div class="w-75">
-                                                <a href="#">Esqueceu a senha?</a>
+                                            <div class="w-80">
+                                                <a href="@Url.Action("RecuperarSenha", "Usuario")">Esqueceu a senha?</a>
                                             </div>
                                         </div>
                                     </form>
