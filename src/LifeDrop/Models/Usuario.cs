@@ -20,6 +20,7 @@ namespace LifeDrop.Models
         public string Senha { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o origem")]
+        [Display(Name = "Selecione o usuario")]
         public int Origem { get; set; }
 
     }
