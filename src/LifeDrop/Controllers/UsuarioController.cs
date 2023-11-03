@@ -17,6 +17,26 @@ namespace LifeDrop.Controllers
             var dados = await _context.Usuarios.ToListAsync();
             return View(dados);
         }
+
+        /*
+        public IActionResult AreaDeLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AreaDeLogin(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Select(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("HomePageDoador");
+            }
+
+            return View();
+        }*/
+
         public IActionResult CadastrarConta()
         {
             return View();
@@ -35,6 +55,18 @@ namespace LifeDrop.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var dados = await _context.Usuarios.FindAsync(id);
+
+            if (id == null)
+                return NotFound();
+            
+            return View(dados);
+        }
 
 
         /*
