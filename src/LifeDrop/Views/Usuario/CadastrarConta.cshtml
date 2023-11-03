@@ -1,0 +1,72 @@
+﻿@model LifeDrop.Models.Usuario
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewData["Title"] = "CadastrarConta";
+}
+
+<body>
+    <div>
+        <section class="section">
+            <section class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 ">
+
+                        <div class="card card-primary">
+                            <div class="card-header text-center">
+                                <h4>Crie sua Conta</h4>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col m-3">
+                                    <form asp-action="CadastrarConta">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="row justify-content-center">
+                                            <div class="w-80 mb-1">
+                                                <input asp-for="Nome" class="form-control" placeholder="Nome">
+                                                <span asp-validation-for="Nome" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="w-80 mb-1">
+                                                <input asp-for="Email" class="form-control" placeholder="E-mail">
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="w-80 mb-1">
+                                                <input asp-for="Senha" class="form-control" placeholder="Senha">
+                                                <span asp-validation-for="Senha" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="w-80 mb-2 ">
+                                                <select asp-for="Tipo" class="form-select" asp-items="Html.GetEnumSelectList<Origem>()" placeholder="Selecione o usuario"></select>
+                                                <span asp-validation-for="Tipo" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="w-80 mb-2 align-items-center text-center">
+                                                <button type="submit" value="CadastrarConta" class="btn btn-primary w-50">CRIAR CONTA</button>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center text-end">
+                                            <div class="w-80">
+                                                <a href="@Url.Action("Index", "Usuario")">Já tenho cadastro</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</body>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

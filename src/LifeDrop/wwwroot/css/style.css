@@ -1,53 +1,35 @@
-﻿.container {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
+﻿.row {
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 25%;
+    left: 70%;
+    width: 70%
 }
 
-#button-1 {
-    width: 60px;
+#titulo-1 {
+    position: absolute;
+    left: 70%;
+    top: 20%
 }
 
-#p-input {
-    height: 40px;
-    width: 360px;
-}
-
-#p2-input {
-    height: 40px;
-    width: 360px;
-}
-
-#p3-input {
-    height: 40px;
-    width: 360px;
-}
-
-#p4-input {
-    height: 40px;
-    width: 360px;
-}
-
-#button-1 {
-    width: 55px;
+.button-1 {
+    position: absolute;
+    left: 70%;
+    top: 56%
 }
 
 .box {
     position: absolute;
-    top: 850%;
-    right: 95%;
-   
+    top: 82%;
+    right: 60%;
 }
 
 fieldset {
     white-space: nowrap;
     border: 3px solid;
     padding: 45px;
-    padding-left: 86px;
-    padding-right: 100px;
+    padding-left: 124px;
+    padding-right: 120px;
+ 
 }
 
 #titulo-2 {
@@ -57,8 +39,8 @@ fieldset {
 
 .tabela {
     position: absolute;
-    top: 100%;
-    right: 95%;
+    top: 25%;
+    right: 60%;
     background: whitesmoke;
     border-radius: 10px;
     padding: 80px;
@@ -66,12 +48,13 @@ fieldset {
     padding-bottom: 2%;
 }
 .tabble {
-    font-size: 21px;
+    font-size: 20px;
     line-height: 40px;
 }
 
 #titulo-3 {
     position: absolute;
-    right: 100%;
+    right: 65%;
+    top: 20%;
     white-space: nowrap;
 }

@@ -1,23 +1,90 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LifeDrop.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LifeDrop.Controllers
 {
     public class UsuarioController : Controller
     {
-       
-        public IActionResult Login()
+        private readonly AppDbContext _context;
+        public UsuarioController(AppDbContext context)
         {
-            return View("~/Views/Login/Index.cshtml");
+            _context = context;
+        }
+       
+        public async Task<IActionResult> Index()
+        {
+            var dados = await _context.Usuarios.ToListAsync();
+            return View(dados);
         }
 
+        /*
+        public IActionResult AreaDeLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AreaDeLogin(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Select(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("HomePageDoador");
+            }
+
+            return View();
+        }*/
+
+        public IActionResult CadastrarConta()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CadastrarConta(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var dados = await _context.Usuarios.FindAsync(id);
+
+            if (id == null)
+                return NotFound();
+            
+            return View(dados);
+        }
+
+
+        /*
         public IActionResult RecuperarSenha()
         {
-            return View("~/Views/RecuperarSenha/Index.cshtml");
+            return View();
         }
-
-        public IActionResult Cadastrar()
+        [HttpPost]
+        public async Task<IActionResult> RecuperarSenha(Usuario usuario)
         {
-            return View("~/Views/CadastrarConta/Index.cshtml");
-        }
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }*/
     }
 }
