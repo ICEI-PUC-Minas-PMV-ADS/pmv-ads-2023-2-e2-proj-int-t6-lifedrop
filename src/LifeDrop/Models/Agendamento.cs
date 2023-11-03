@@ -10,7 +10,9 @@ namespace LifeDrop.Models
         [Key]
         public int IdAgendamento { get; set; }
         public int IdDoador { get; set; }
-        public string DataEHora { get; set; }
+        public int IdBancoDeSangue { get; set; }
+        public DateTime Data { get; set; }
+        public string Hora { get; set; }
         public int StatusDaDoacao { get; set; }
 
     }
