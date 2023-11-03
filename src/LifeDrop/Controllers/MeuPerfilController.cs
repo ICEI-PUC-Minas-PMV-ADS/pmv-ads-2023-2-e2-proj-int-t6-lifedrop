@@ -67,5 +67,38 @@ namespace LifeDrop.Controllers
 
             return View();
         }
+
+        //public Task<IActionResult> Edit(int? id)
+        //{
+        //    if (id == null)
+        //        return NotFound();
+
+        //    var dados = await _context.Agendamentos.FindAsync(id);
+
+        //    if (dados == null)
+        //        return NotFound();
+
+
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> Edit(int id, Agendamento agendamento)
+        //{
+        //    if (id != Agendamento.Id)
+        //        return NotFound();
+
+        //    if (ModalState.IsValid)
+        //    {
+        //        _context.Agendamentos.Update(agendamento);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View();
+        //}
+
     }
+
+
 }
+

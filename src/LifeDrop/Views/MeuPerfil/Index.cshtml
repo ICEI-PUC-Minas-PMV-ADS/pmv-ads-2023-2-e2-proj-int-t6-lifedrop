@@ -81,6 +81,7 @@
                             <div class="col-sm-12">
                                 <label asp-for="TipoSanguineo">Tipo sanguíneo</label>
                                 <select asp-for="TipoSanguineo" class="form-control" id="tipoSelect">
+                                    <option value="">Selecione</option>
                                     <option value="A-">A-</option>
                                     <option value="A+">A+</option>
                                     <option value="B-">B-</option>
@@ -94,7 +95,6 @@
                             </div>
                         </div>
 
-
                         <div class="row mt-2 text-end">
                             <div class="col-sm-12">
                                 <button id="btn_save" type="submit" class="btn btn-primary">
@@ -102,6 +102,20 @@
                                 </button>
                             </div>
                         </div>
+                        <script>
+                            // Função para exibir o alerta "Informações salvas"
+                            function exibirAlerta() {
+                                alert("Informações salvas");
+                            }
+
+                            // Event listener para o botão "Salvar"
+                            const botaoSalvar = document.getElementById('btn_save');
+                            botaoSalvar.addEventListener('click', function () {
+                                exibirAlerta();
+                            });
+                        </script>
+
+                       
                     </form>
                 </div>                            
             </div>

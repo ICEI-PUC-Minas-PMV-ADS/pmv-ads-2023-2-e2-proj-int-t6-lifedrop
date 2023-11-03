@@ -19,6 +19,9 @@ namespace LifeDrop.Models
         [Required(ErrorMessage = "Obrigatório informar o endereço")]
         [Display(Name = "Endereço")]
         public string Endereco { get; set; }
-        
+        [Required(ErrorMessage = "Obrigatório informar o estado")]
+        public string Estado { get; set; }
+        [Required(ErrorMessage = "Obrigatório informar o município")]
+        public string Municipio { get; set; }
     }
 }
