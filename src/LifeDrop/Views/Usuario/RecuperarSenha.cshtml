@@ -1,7 +1,7 @@
 ﻿@model LifeDrop.Models.Usuario
 @{
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
-    ViewData["Title"] = "CadastrarConta";
+    ViewData["Title"] = "CadastrarUsuario"; //Recuperar
 }
 
 <body>
@@ -17,7 +17,7 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col m-3">
-                                    <form asp-action="CadastrarConta">
+                                    <form asp-action="CadastrarUsuario">
                                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                         <div class="row justify-content-center">
                                             <div class="w-80 mb-1">
