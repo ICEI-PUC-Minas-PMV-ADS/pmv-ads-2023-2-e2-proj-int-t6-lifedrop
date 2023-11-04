@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\LifeDrop"
   ],
-  "SelectedNode": "\\LifeDrop.sln",
+  "SelectedNode": "\\src\\LifeDrop\\LifeDrop.sln",
   "PreviewInSolutionExplorer": false
 }

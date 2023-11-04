@@ -18,43 +18,44 @@ namespace LifeDrop.Controllers
             return View(dados);
         }
 
-        /*
-        public IActionResult AreaDeLogin()
+        
+        public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AreaDeLogin(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Usuarios.Select(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("HomePageDoador");
-            }
-
-            return View();
-        }*/
-
-        public IActionResult CadastrarConta()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CadastrarConta(Usuario usuario)
+        public async Task<IActionResult> Login(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
                 _context.Usuarios.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("HomePageDoador");
             }
 
             return View();
         }
 
+        public IActionResult CadastrarUsuario()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Usuarios.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Login");
+            }
+
+            return View();
+        }
+
+        /*
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
