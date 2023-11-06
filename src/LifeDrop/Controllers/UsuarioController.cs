@@ -1,5 +1,6 @@
 ﻿using LifeDrop.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 
 namespace LifeDrop.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         private readonly AppDbContext _context;
@@ -15,77 +17,93 @@ namespace LifeDrop.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Usuarios.ToListAsync());
-        }
-
-
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([Bind("Email, Senha, Origem")] Usuario usuario)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([Bind("Email,Senha,Origem")] Usuario usuario)
         {
-            var dados = await _context.Usuarios.FindAsync(usuario.Email); // Confirmar se estÃ¡ puxando corretamente
+            var user = await _context.Usuarios
+                .FirstOrDefaultAsync(m => m.Email == usuario.Email);
 
-            if (dados == null)
+            if (user == null)
             {
-                ViewBag.Message = "E-mail e/ou senha invalidos!";
+                ViewBag.Message = "Usuário e/ou Senha inválidos!";
                 return View();
             }
-            bool senhaOk = BCrypt.Net.BCrypt.Verify(usuario.Senha, dados.Senha);
 
-            if (senhaOk)
+            bool isSenhaOk = BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha);
+
+            if (isSenhaOk)
             {
-                var claims = new List<Claim>()
+                var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, dados.Nome),
-                    new Claim(ClaimTypes.NameIdentifier, dados.IdUsuario.ToString()),
-                    new Claim(ClaimTypes.Name, dados.Origem),
+                    new Claim(ClaimTypes.Name, user.Nome),
+                    new Claim(ClaimTypes.NameIdentifier, user.Nome),
+                    new Claim(ClaimTypes.Name, user.Origem.ToString())
                 };
-                var usurioIdentity = new ClaimsIdentity(claims, "Login");
-                ClaimsPrincipal principal = new ClaimsPrincipal(usurioIdentity);
+
+                var userIdentity = new ClaimsIdentity(claims, "login");
+
+                ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
 
                 var props = new AuthenticationProperties
                 {
                     AllowRefresh = true,
-                    ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(8),
-                    IsPersistent = true,
+                    ExpiresUtc = DateTime.Now.ToLocalTime().AddDays(7),
+                    IsPersistent = true
                 };
+
                 await HttpContext.SignInAsync(principal, props);
 
-                Redirect("\\Views\\HomePageDoador\\");//Confirmar como passar para a HomePageDoador
-            }
-            else
-            {
-                ViewBag.Message = "E-mail e/ou senha invalidos!";
+                return Redirect("/");
+
             }
 
-            return View();
-        }
-
-        public IActionResult CadastrarUsuario()
-        {
+            ViewBag.Message = "Usuário e/ou Senha inválidos!";
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CadastrarUsuario([Bind("IdUsuario, Nome, Email, Senha, Origem")] Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
                 usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
-                _context.Usuarios.Add(usuario);
+                _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Login");
             }
+            return View(usuario);
+        }
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Login", "Usuario");
+        }
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
             return View();
         }
 
+        // GET: Usuarios
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Usuarios.ToListAsync());
+        }
+        
+        private bool UsuarioExists(int id)
+        {
+            return _context.Usuarios.Any(e => e.IdUsuario == id);
+        }
 
         /*
         public IActionResult RecuperarSenha()
