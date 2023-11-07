@@ -1,8 +1,9 @@
-﻿using LifeDrop.Models;
+﻿
+
+using LifeDrop.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
@@ -25,7 +26,7 @@ namespace LifeDrop.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([Bind("Email,Senha,Origem")] Usuario usuario)
+        public async Task<IActionResult> Login([Bind("Email,Senha,Perfil")] Usuario usuario)
         {
             var user = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Email == usuario.Email);
@@ -44,7 +45,7 @@ namespace LifeDrop.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.Nome),
                     new Claim(ClaimTypes.NameIdentifier, user.Nome),
-                    new Claim(ClaimTypes.Name, user.Origem.ToString())
+                    new Claim(ClaimTypes.Role, user.Perfil.ToString())
                 };
 
                 var userIdentity = new ClaimsIdentity(claims, "login");
@@ -68,9 +69,16 @@ namespace LifeDrop.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        public IActionResult CadastrarUsuario()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
+        [AllowAnonymous]
+        public async Task<IActionResult> CadastrarUsuario([Bind("Email,Nome,Senha,Perfil")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -81,13 +89,14 @@ namespace LifeDrop.Controllers
             }
             return View(usuario);
         }
-
+        /*
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
 
             return RedirectToAction("Login", "Usuario");
         }
+        
         [AllowAnonymous]
         public IActionResult AccessDenied()
         {
@@ -99,7 +108,7 @@ namespace LifeDrop.Controllers
         {
             return View(await _context.Usuarios.ToListAsync());
         }
-        
+
         private bool UsuarioExists(int id)
         {
             return _context.Usuarios.Any(e => e.IdUsuario == id);

@@ -19,8 +19,14 @@ namespace LifeDrop.Models
         [Required(ErrorMessage = "Obrigatório informar o senha")]
         public string Senha { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o Origem")]
-        public string Origem { get; set; }
+        [Required(ErrorMessage = "Obrigatario informar o perfil")]
+        [Display(Name = "Selecione o perfil")]
+        public Perfil Perfil { get; set; } 
     }
-
+    public enum Perfil
+    {
+        Doador = 0,
+        Banco_De_Sangue
+    }
 }
+
