@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\LifeDrop",
+    "\\src\\LifeDrop\\Controllers",
+    "\\src\\LifeDrop\\Models",
+    "\\src\\LifeDrop\\Views",
+    "\\src\\LifeDrop\\Views\\BakcupTiago"
   ],
-  "SelectedNode": "\\LifeDrop.sln",
+  "SelectedNode": "\\src\\LifeDrop\\LifeDrop.sln",
   "PreviewInSolutionExplorer": false
 }
