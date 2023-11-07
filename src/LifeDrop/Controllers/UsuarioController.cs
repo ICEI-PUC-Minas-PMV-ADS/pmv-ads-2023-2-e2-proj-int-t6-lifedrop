@@ -45,7 +45,7 @@ namespace LifeDrop.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.Nome),
                     new Claim(ClaimTypes.NameIdentifier, user.Nome),
-                    new Claim(ClaimTypes.Role, user.Perfil.ToString())
+                    new Claim(ClaimTypes.Role, user.Origem.ToString())
                 };
 
                 var userIdentity = new ClaimsIdentity(claims, "login");
@@ -89,7 +89,7 @@ namespace LifeDrop.Controllers
             }
             return View(usuario);
         }
-        /*
+        
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

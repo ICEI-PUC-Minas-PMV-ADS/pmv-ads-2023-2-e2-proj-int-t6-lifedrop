@@ -21,9 +21,9 @@ namespace LifeDrop.Models
 
         [Required(ErrorMessage = "Obrigatario informar o perfil")]
         [Display(Name = "Selecione o perfil")]
-        public Perfil Perfil { get; set; } 
+        public Origem Origem { get; set; } 
     }
-    public enum Perfil
+    public enum Origem
     {
         Doador = 0,
         Banco_De_Sangue
