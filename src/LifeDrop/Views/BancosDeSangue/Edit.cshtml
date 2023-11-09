@@ -33,13 +33,24 @@
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <br />
-                <a class="btn btn-success" asp-action="Index">Voltar</a>
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Municipio" class="control-label"></label>
+                <input asp-for="Municipio" class="form-control" />
+                <span asp-validation-for="Municipio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
             </div>
         </form>
     </div>
 </div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
