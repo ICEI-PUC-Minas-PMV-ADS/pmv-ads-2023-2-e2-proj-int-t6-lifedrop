@@ -4,12 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-@{
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
-
-
-<h1>Lista </h1>
+<h1>Lista</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-success">Adicionar</a>
@@ -29,6 +24,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Endereco)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipio)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -46,6 +47,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
             </td>
             <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdBancoDeSangue">Editar</a> |
