@@ -11,7 +11,7 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Estado <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
+                        <select class="form-control" id="uf">
                             <option value="">Selecione seu estado</option>
                         </select>
                     </div>
@@ -20,16 +20,15 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Município <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
+                        <select class="form-control" id="municipio">
                             <option value="">Selecione seu município</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Unidade <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
+                        <select class="form-control" id="unidade">
                             <option value="">Selecione a unidade</option>
                         </select>
                     </div>
@@ -38,13 +37,13 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-5">
                         <label for="f_titulo">Escolha o dia <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
+                        <select class="form-control" id="data">
                             <option value="">...</option>
                         </select>
                     </div>
                     <div class="col-sm-4 justify-content-center">
                         <label for="f_titulo">Escolha o horário <span class="text-info">*</span></label>
-                        <select class="form-control" id="tipoSelect">
+                        <select class="form-control" id="horario">
                             <option value="">...</option>
                         </select>
                     </div>
@@ -60,14 +59,14 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">E-mail<span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="emailInput">                        
+                        <input type="text" class="form-control" id="emailInput">
                     </div>
                 </div>
 
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-3">
                         <label for="f_titulo">CPF<span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="cpfInput">                       
+                        <input type="text" class="form-control" id="cpfInput">
                     </div>
                     <div class="col-sm-3 justify-content-center">
                         <label for="f_titulo">Telefone<span class="text-info">*</span></label>
@@ -75,7 +74,7 @@
                     </div>
                     <div class="col-sm-3 justify-content-center">
                         <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="nascimentoInput">                        
+                        <input type="text" class="form-control" id="nascimentoInput">
                     </div>
                 </div>
 
@@ -145,7 +144,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
     </div>
 
@@ -166,11 +165,142 @@
     </div>
 </body>
 
-@section Scripts {
-    <script>
-        $('#telefoneInput').mask('(00)000000000', { placeholder: "(__)_ ____ ____" });
-        $('#nascimentoInput').mask('00/00/0000', {placeholder: "__/__/____"} );
-        $('#cpfInput').mask('000.000.000-00', {placeholder: "___.___.___-__"} );
-    </script>
+<script>
+    // Preenche o select de estados (UF) em ordem alfabética
+    async function popularEstados() {
+        const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+        const ufSelect = document.getElementById("uf");
 
-}
+        try {
+            const ufRequest = await fetch(urlUF);
+            const ufResponse = await ufRequest.json();
+
+            ufResponse
+                .sort((a, b) => a.nome.localeCompare(b.nome)) // Ordena os estados por nome
+                .forEach(function (ufData) {
+                    const option = document.createElement("option");
+                    option.value = ufData.sigla;
+                    option.text = ufData.nome;
+
+                    ufSelect.add(option);
+                });
+
+            // Adiciona evento de mudança no select de UF
+            ufSelect.addEventListener('change', async () => {
+                const selectedUF = ufSelect.value;
+                const municipioSelect = document.getElementById("municipio");
+
+                // Carrega municípios para a UF selecionada
+                const municipiosUrl = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/municipios`;
+                const municipiosRequest = await fetch(municipiosUrl);
+                const municipiosResponse = await municipiosRequest.json();
+
+                // Preenche o select de municípios
+                municipioSelect.innerHTML = '<option value="">Selecione seu município</option>';
+                municipiosResponse.forEach(function (municipioData) {
+                    const option = document.createElement("option");
+                    option.value = municipioData.nome;
+                    option.text = municipioData.nome;
+
+                    municipioSelect.add(option);
+                });
+
+                // Adiciona evento de mudança no select de Municípios
+                municipioSelect.addEventListener('change', async () => {
+                    const selectedMunicipio = municipioSelect.value;
+                    const urlUnidades = `http://localhost:5050/AgendeDoacao/GetUnidades?municipio=${selectedMunicipio}`;
+                    const unidadeSelect = document.getElementById("unidade");
+
+                    try {
+                        const unidadesRequest = await fetch(urlUnidades);
+                        const unidadesResponse = await unidadesRequest.json();
+
+                        // Preenche o select de unidades
+                        unidadeSelect.innerHTML = '<option value="">Selecione a unidade</option>';
+                        unidadesResponse.forEach(function (unidadeData) {
+                            const option = document.createElement("option");
+                            option.value = unidadeData.idBancoDeSangue; // Substitua "id" pelo nome ou identificador da unidade
+                            option.text = unidadeData.nomeUnidade; // Substitua "nome" pelo campo correspondente na resposta da API
+
+                            unidadeSelect.add(option);
+                        });
+                    } catch (error) {
+                        console.error('Erro ao carregar unidades:', error);
+                    }
+                });
+            });
+        } catch (error) {
+            console.error('Erro ao carregar UFs:', error);
+        }
+    }
+    // Preenche o select de horários
+    function popularHorarios() {
+        const horarioSelect = document.getElementById("horario");
+
+        // Limpa as opções existentes
+        horarioSelect.innerHTML = '<option value="">...</option>';
+
+        // Adiciona opções de horário a cada intervalo de 30 minutos de 8h a 18h
+        for (let hora = 8; hora <= 18; hora++) {
+            for (let minuto = 0; minuto < 60; minuto += 30) {
+                const option = document.createElement("option");
+                const horaFormatada = hora.toString().padStart(2, '0');
+                const minutoFormatado = minuto.toString().padStart(2, '0');
+                option.value = `${horaFormatada}:${minutoFormatado}`;
+                option.text = `${horaFormatada}:${minutoFormatado}`;
+
+                horarioSelect.add(option);
+            }
+        }
+    }
+
+    function popularDiasUteis() {
+        const dataSelect = document.getElementById("data");
+
+        // Limpa as opções existentes
+        dataSelect.innerHTML = '<option value="">...</option>';
+
+        const hoje = new Date();
+        const diasNoFuturo = 15;  // Ajuste conforme necessário
+
+        for (let i = 0; i <= diasNoFuturo; i++) {
+            const data = new Date();
+            data.setDate(hoje.getDate() + i);
+
+            // Verifica se o dia é útil (segunda a sexta)
+            if (data.getDay() >= 1 && data.getDay() <= 5) {
+                const option = document.createElement("option");
+                const dia = data.getDate().toString().padStart(2, '0');
+                const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+                const ano = data.getFullYear();
+                const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                option.value = dataFormatada;
+                option.text = dataFormatada;
+
+                dataSelect.add(option);
+            }
+        }
+    }
+
+    // Chama a função para popular as datas ao carregar a página
+    window.addEventListener('load', () => {
+        popularDiasUteis();
+    });
+
+    // Chama a função para popular os horários ao carregar a página
+    window.addEventListener('load', () => {
+        popularHorarios();
+    });
+
+    // Chama a função para popular os estados ao carregar a página
+    window.addEventListener('load', () => {
+
+        // Máscaras
+        $('#telefoneInput').mask('(00)000000000', { placeholder: "(__)_ ____ ____" });
+        $('#nascimentoInput').mask('00/00/0000', { placeholder: "__/__/____" });
+        $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
+
+        popularEstados();
+    });
+</script>
