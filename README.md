@@ -18,12 +18,12 @@ Uma aplicação que conecta doadores de sangue a bancos de sangue ou hospitais, 
 ## Integrantes
 
 
-Aline Azedias de Souza
-Júlia Roberta de Souza
-Leonardo Guerra Melgaço
-Luís Eduardo Vieira Chaves Paiva
-Natali Xavier da Costa
-Tiago Henrique Oliveira Souza
+* Aline Azedias de Souza
+* Júlia Roberta de Souza
+* Leonardo Guerra Melgaço
+* Luís Eduardo Vieira Chaves Paiva
+* Natali Xavier da Costa
+* Tiago Henrique Oliveira Souza
 
 ## Orientador
 
