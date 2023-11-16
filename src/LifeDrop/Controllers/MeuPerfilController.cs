@@ -1,24 +1,27 @@
 ﻿using LifeDrop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace LifeDrop.Controllers
 {
     public class MeuPerfilController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly int _idUsuarioLogado = 3;
-        private readonly Usuario _usuarioLogado;
+        private Usuario _usuarioLogado;
 
         public MeuPerfilController(AppDbContext context)
         {
             _context = context;
-            _usuarioLogado = _context.Usuarios.FirstOrDefault(x => x.IdUsuario == _idUsuarioLogado);
         }
 
         public IActionResult Index()
         {
-            var doador = _context.Doadores.FirstOrDefault(x => x.IdUsuario == _idUsuarioLogado);
+            var identity = (ClaimsIdentity)User.Identity;
+
+            _usuarioLogado = _context.Usuarios.FirstOrDefault(x => x.Nome == identity.Name);
+
+            var doador = _context.Doadores.FirstOrDefault(x => x.IdUsuario == _usuarioLogado.IdUsuario);
 
             if (doador == null)
             {

@@ -29,7 +29,6 @@
     <None Include="wwwroot\css\style.css" />
     <None Include="wwwroot\css\meuPerfil.css" />
     <None Include="wwwroot\images\logo.png" />
-    <None Include="wwwroot\js\meuPerfil.js" />
   </ItemGroup>
 
   <ItemGroup>
