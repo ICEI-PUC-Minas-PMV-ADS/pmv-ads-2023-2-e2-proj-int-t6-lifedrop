@@ -17,12 +17,13 @@ Uma aplicação que conecta doadores de sangue a bancos de sangue ou hospitais, 
 
 ## Integrantes
 
-* Júlia Roberta de Souza
-* Tiago Henrique Oliveira Souza
-* Natali Xavier da Costa
+
 * Aline Azedias de Souza
+* Júlia Roberta de Souza
 * Leonardo Guerra Melgaço
 * Luís Eduardo Vieira Chaves Paiva
+* Natali Xavier da Costa
+* Tiago Henrique Oliveira Souza
 
 ## Orientador
 
