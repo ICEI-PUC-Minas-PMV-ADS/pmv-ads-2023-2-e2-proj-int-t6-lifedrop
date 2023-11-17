@@ -1,5 +1,7 @@
 ﻿using LifeDrop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace LifeDrop.Controllers
 {
@@ -15,14 +17,42 @@ namespace LifeDrop.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var identity = (ClaimsIdentity)User.Identity;
+
+            var usuarioLogado = _context.Usuarios.FirstOrDefault(x => x.Nome == identity.Name);
+
+            var doador = _context.Doadores.FirstOrDefault(x => x.IdUsuario == usuarioLogado.IdUsuario);
+
+            if (doador  == null)
+            {
+                return View();
+            }
+
+            var agendamento = new Agendamento()
+            {
+                IdDoador = doador.IdDoador, 
+                Data= DateTime.Now   
+            };
+
+            return View(agendamento);
         }
 
         public List<BancoDeSangue> GetUnidades(string municipio)
         {
-            var unidades = _context.BancosDeSangue.Where(x => x.Municipio.Contains(municipio)).OrderBy(y=> y.NomeUnidade).ToList();
+            var unidades = _context.BancosDeSangue.Where(x => x.Municipio.Contains(municipio)).OrderBy(y => y.NomeUnidade).ToList();
 
             return unidades;
+        }
+
+        public async Task<IActionResult> Salvar(Agendamento agendamento)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Agendamentos.Add(agendamento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "MeuPerfil", new { area = "" }); 
+            }
+            return View();
         }
     }
 }

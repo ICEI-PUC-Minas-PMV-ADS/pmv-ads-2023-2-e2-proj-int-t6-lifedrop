@@ -1,13 +1,9 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
+﻿@model LifeDrop.Models.Agendamento
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <form id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+            <form asp-action="Salvar" id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+                <input type="hidden" asp-for="IdDoador" />
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Estado <span class="text-info">*</span></label>
@@ -28,7 +24,7 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Unidade <span class="text-info">*</span></label>
-                        <select class="form-control" id="unidade">
+                        <select asp-for="IdBancoDeSangue" class="form-control" id="unidade">
                             <option value="">Selecione a unidade</option>
                         </select>
                     </div>
@@ -37,50 +33,48 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-5">
                         <label for="f_titulo">Escolha o dia <span class="text-info">*</span></label>
-                        <select class="form-control" id="data">
-                            <option value="">...</option>
-                        </select>
+                        <input asp-for="Data" type="date" class="form-control" id="data" />
                     </div>
                     <div class="col-sm-4 justify-content-center">
                         <label for="f_titulo">Escolha o horário <span class="text-info">*</span></label>
-                        <select class="form-control" id="horario">
+                        <select asp-for="Hora" class="form-control" id="horario">
                             <option value="">...</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="row mt-3 justify-content-center">
-                    <div class="col-sm-9">
-                        <label for="f_titulo">Nome completo <span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="nomelInput">
-                    </div>
+                @*   <div class="row mt-3 justify-content-center">
+                <div class="col-sm-9">
+                <label for="f_titulo">Nome completo <span class="text-info">*</span></label>
+                <input type="text" class="form-control" id="nomelInput">
+                </div>
                 </div>
 
                 <div class="row mt-3 justify-content-center">
-                    <div class="col-sm-9">
-                        <label for="f_titulo">E-mail<span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="emailInput">
-                    </div>
+                <div class="col-sm-9">
+                <label for="f_titulo">E-mail<span class="text-info">*</span></label>
+                <input type="text" class="form-control" id="emailInput">
+                </div>
                 </div>
 
                 <div class="row mt-3 justify-content-center">
-                    <div class="col-sm-3">
-                        <label for="f_titulo">CPF<span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="cpfInput">
-                    </div>
-                    <div class="col-sm-3 justify-content-center">
-                        <label for="f_titulo">Telefone<span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="telefoneInput">
-                    </div>
-                    <div class="col-sm-3 justify-content-center">
-                        <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
-                        <input type="text" class="form-control" id="nascimentoInput">
-                    </div>
+                <div class="col-sm-3">
+                <label for="f_titulo">CPF<span class="text-info">*</span></label>
+                <input type="text" class="form-control" id="cpfInput">
                 </div>
+                <div class="col-sm-3 justify-content-center">
+                <label for="f_titulo">Telefone<span class="text-info">*</span></label>
+                <input type="text" class="form-control" id="telefoneInput">
+                </div>
+                <div class="col-sm-3 justify-content-center">
+                <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
+                <input type="text" class="form-control" id="nascimentoInput">
+                </div>
+                </div>*@
 
                 <div class="row mt-5 text-center">
                     <div class="col-sm-12" style="margin-bottom: 15px;">
-                        <button onclick="insert_or_update()" id="btn_agendar" type="button" class="btn btn-primary">
+                        <button id="btn_agendar" type="submit" class="btn btn-primary">
                             Agendar doação
                         </button>
                     </div>
@@ -302,5 +296,16 @@
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
 
         popularEstados();
+    });
+
+
+    // Função para exibir o alerta "Informações salvas"
+    function exibirAlerta() {
+        alert("Informações salvas");
+    }
+    // Event listener para o botão "Salvar"
+    const botaoSalvar = document.getElementById('btn_agendar');
+    botaoSalvar.addEventListener('click', function () {
+        exibirAlerta();
     });
 </script>
