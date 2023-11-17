@@ -8,9 +8,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
-
-<h3 id="titulo-1"> Informações do banco de sangue</h3>
+<h3 id="titulo-1">Informações do banco de sangue</h3>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -37,12 +35,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <select asp-for="Estado" class="form-control" id="estado"></select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Municipio" class="control-label"></label>
-                <input asp-for="Municipio" class="form-control" />
+                <select asp-for="Municipio" class="form-control" id="municipio"></select>
                 <span asp-validation-for="Municipio" class="text-danger"></span>
             </div>
             <br />
@@ -53,6 +51,37 @@
         </form>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Estados
+        $.getJSON('https://servicodados.ibge.gov.br/api/v1/localidades/estados', function (data) {
+            var options = '<option value="">Selecione um estado</option>';
+            $.each(data, function (key, value) {
+                options += '<option value="' + value.sigla + '">' + value.nome + '</option>';
+            });
+            $('#estado').html(options);
+        });
+
+        // Municipios
+        $('#estado').change(function () {
+            var estadoSigla = $(this).val();
+            if (estadoSigla) {
+                $.getJSON('https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + estadoSigla + '/municipios', function (data) {
+                    var options = '<option value="">Selecione um município</option>';
+                    $.each(data, function (key, value) {
+                        options += '<option value="' + value.nome + '">' + value.nome + '</option>';
+                    });
+                    $('#municipio').html(options);
+                });
+            } else {
+                $('#municipio').html('<option value="">Selecione um estado primeiro</option>');
+            }
+        });
+    });
+</script>
+
 
 <h3 id="titulo-3">Posto de Coleta</h3>
 <div class="tabela">
