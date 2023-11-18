@@ -16,10 +16,10 @@ namespace LifeDrop.Controllers
         {
             var dados = await _context.BancosDeSangue.ToListAsync();
 
-            return View(dados); 
+            return View(dados);
         }
 
-        public   IActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -31,9 +31,9 @@ namespace LifeDrop.Controllers
             {
                 _context.BancosDeSangue.Add(bancoDeSangue);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");   
+                return RedirectToAction("Index");
             }
-            return View(bancoDeSangue); 
+            return View(bancoDeSangue);
         }
 
         public async Task<IActionResult> Edit(int? id)
@@ -67,7 +67,7 @@ namespace LifeDrop.Controllers
 
         public async Task<IActionResult> Details(int? id)
         {
-            if(id == null)
+            if (id == null)
                 return NotFound();
             var dados = await _context.BancosDeSangue.FindAsync(id);
 
@@ -101,10 +101,10 @@ namespace LifeDrop.Controllers
 
             _context.BancosDeSangue.Remove(dados);
             await _context.SaveChangesAsync();
-            
-            return RedirectToAction("Index");   
+
+            return RedirectToAction("Index");
         }
 
     }
-     
+
 }
