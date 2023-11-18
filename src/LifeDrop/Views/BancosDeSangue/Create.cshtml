@@ -7,7 +7,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+<body>
 <h3 id="titulo-1">Informações do banco de sangue</h3>
 <div class="row">
     <div class="col-md-4">
@@ -82,62 +82,8 @@
     });
 </script>
 
+   
 
-<h3 id="titulo-3">Posto de Coleta</h3>
-<div class="tabela">
-    <table class="tabble" id="tabela">
-        <tr>
-            <th>Tipo Sanguíneo</th>
-            <th>Estoque</th>
-        </tr>
-        <tr>
-            <td><strong>O+</strong></td>
-            <td><button onclick="editarEstoque(this)">Critico</button></td>
-        </tr>
-        <tr>
-            <td><strong>O-</strong></td>
-            <td><button onclick="editarEstoque(this)">Alerta</button></td>
-        </tr>
-        <tr>
-            <td><strong>A+</strong></td>
-            <td><button onclick="editarEstoque(this)">Adequado</button></td>
-        </tr>
-        <tr>
-            <td><strong>A-</strong></td>
-            <td><button onclick="editarEstoque(this)">Alerta</button></td>
-        </tr>
-        <tr>
-            <td><strong>B+</strong></td>
-            <td><button onclick="editarEstoque(this)">Adequado</button></td>
-        </tr>
-        <tr>
-            <td><strong>B-</strong></td>
-            <td><button onclick="editarEstoque(this)">Alerta</button></td>
-        </tr>
-        <tr>
-            <td><strong>AB+</strong></td>
-            <td><button onclick="editarEstoque(this)">Estável</button></td>
-        </tr>
-        <tr>
-            <td><strong>AB-</strong></td>
-            <td><button onclick="editarEstoque(this)">Alerta</button></td>
-        </tr>
-    </table>
-</div>
-
-<script>
-    function editarEstoque(botao) {
-        var cell = botao.parentNode;
-        var row = cell.parentNode;
-
-        var tipoSanguineo = row.cells[0].innerText;
-        var novoEstoque = prompt('Digite o novo valor de estoque para ' + tipoSanguineo);
-
-        if (novoEstoque !== null) {
-            row.cells[1].innerHTML = '<button onclick="editarEstoque(this)">' + novoEstoque + '</button>';
-        }
-    }
-</script>
 
 <div class="box">
     <h4 id="titulo-2">Solicitar doação emergencial</h4>
@@ -164,6 +110,7 @@
     </fieldset>
 </div>
 
-@section Scripts {
+   @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+   }
+</body>
