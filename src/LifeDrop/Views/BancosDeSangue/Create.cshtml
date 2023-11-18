@@ -12,7 +12,7 @@
 <body>
 
     <h3 id="titulo-1">Informações do banco de sangue</h3>
-    <div class="row">
+    <div class="roww">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -84,6 +84,31 @@
             });
         });
     </script>
+
+    <div class="box">
+        <h4 id="titulo-2">Solicitar doação emergencial</h4>
+        <fieldset id="field">
+            <legend>Tipo Sanguíneo</legend>
+            <div>
+                <br>
+                <label for=""></label>
+                <select name="" id="list">
+                    <option value="">O+</option>
+                    <option value="">O-</option>
+                    <option value="">A+</option>
+                    <option value="">A-</option>
+                    <option value="">B+</option>
+                    <option value="">B-</option>
+                    <option value="">AB+</option>
+                    <option value="">AB-</option>
+                </select>
+
+            </div>
+            <br>
+            <button id="button-2" asp-controller="PainelAdministrador" asp-action="Agendamentos">Solicitar</button>
+
+        </fieldset>
+    </div>
 
 </body>
 
