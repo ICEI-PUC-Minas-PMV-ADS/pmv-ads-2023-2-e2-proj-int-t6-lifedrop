@@ -61,7 +61,12 @@ namespace LifeDrop.Controllers
 
                 await HttpContext.SignInAsync(principal, props);
 
-                return Redirect("/");
+                if (user.Origem == Origem.Doador)
+                {
+                    return RedirectToAction("Index", "HomePageDoador");
+                }
+
+                return RedirectToAction("Agendamentos", "Administrador");
 
             }
 
@@ -78,7 +83,7 @@ namespace LifeDrop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public async Task<IActionResult> CadastrarUsuario([Bind("Email,Nome,Senha,Perfil")] Usuario usuario)
+        public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
         {
             
             if (await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == usuario.Email) == null)

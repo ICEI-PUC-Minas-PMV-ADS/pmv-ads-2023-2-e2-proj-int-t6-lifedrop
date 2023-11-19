@@ -8,39 +8,34 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h5 class="text-center  mb-4 mt-4">Você tem certeza que gostaria de cancelar esse agendamento?</h5>
-            <div>               
-                <dl class="row">
-                    <dt class="col-sm-2">
+            <div class="container">
+                <dl class="row justify-content-center">
+                    <dt class="col-sm-5 text-end">
                         @Html.DisplayNameFor(model => model.Data)
                     </dt>
-                    <dd class="col-sm-10">
+                    <dd class="col-sm-6">
                         @Html.DisplayFor(model => model.Data)
                     </dd>
-                    <dt class="col-sm-2">
+                    <dt class="col-sm-5 text-end">
                         @Html.DisplayNameFor(model => model.Hora)
                     </dt>
-                    <dd class="col-sm-10">
+                    <dd class="col-sm-6">
                         @Html.DisplayFor(model => model.Hora)
                     </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.StatusDaDoacao)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.StatusDaDoacao)
-                    </dd>
-                    <dt class="col-sm-2">
+                    <dt class="col-sm-5 text-end">
                         @Html.DisplayNameFor(model => model.Unidade.NomeUnidade)
                     </dt>
-                    <dd class="col-sm-10">
+                    <dd class="col-sm-6">
                         @Html.DisplayFor(model => model.Unidade.NomeUnidade)
                     </dd>
-                    <dt class="col-sm-2">
+                    <dt class="col-sm-5 text-end">
                         @Html.DisplayNameFor(model => model.Unidade.Email)
                     </dt>
-                    <dd class="col-sm-10">
+                    <dd class="col-sm-6">
                         @Html.DisplayFor(model => model.Unidade.Email)
                     </dd>
                 </dl>
+            </div>
 
                 <form asp-action="Cancelar" id="cancelar">
                     <input type="hidden" asp-for="IdAgendamento" />
