@@ -1,6 +1,7 @@
 using LifeDrop.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 
 namespace LifeDrop
 {
@@ -14,7 +15,7 @@ namespace LifeDrop
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+             options.UseSqlServer(builder.Configuration.GetConnectionString("LIFE_DROP_CONNECTIONSTRING")));
 
             builder.Services.Configure<CookiePolicyOptions>(options =>
             {
