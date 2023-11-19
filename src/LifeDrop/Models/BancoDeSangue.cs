@@ -33,6 +33,7 @@ namespace LifeDrop.Models
         public string AB_Negative { get; set; }
 
         
+        public List<Agendamento> Agendamentos { get; set; }
     }
     
 

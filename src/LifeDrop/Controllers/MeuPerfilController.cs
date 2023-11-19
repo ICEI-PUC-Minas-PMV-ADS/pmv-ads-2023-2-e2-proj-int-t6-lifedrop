@@ -1,6 +1,7 @@
 ﻿using LifeDrop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Packaging;
 using System.Security.Claims;
 
 namespace LifeDrop.Controllers
@@ -21,7 +22,7 @@ namespace LifeDrop.Controllers
 
             _usuarioLogado = _context.Usuarios.FirstOrDefault(x => x.Nome == identity.Name);
 
-            var doador = _context.Doadores.FirstOrDefault(x => x.IdUsuario == _usuarioLogado.IdUsuario);
+            var doador = _context.Doadores.Include(t=>t.Agendamentos).ThenInclude(u => u.Unidade).FirstOrDefault(x => x.IdUsuario == _usuarioLogado.IdUsuario);
 
             if (doador == null)
             {
@@ -70,38 +71,5 @@ namespace LifeDrop.Controllers
 
             return View();
         }
-
-        //public Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //        return NotFound();
-
-        //    var dados = await _context.Agendamentos.FindAsync(id);
-
-        //    if (dados == null)
-        //        return NotFound();
-
-
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(int id, Agendamento agendamento)
-        //{
-        //    if (id != Agendamento.Id)
-        //        return NotFound();
-
-        //    if (ModalState.IsValid)
-        //    {
-        //        _context.Agendamentos.Update(agendamento);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View();
-        //}
-
     }
-
-
 }
-

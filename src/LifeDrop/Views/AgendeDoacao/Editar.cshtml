@@ -1,13 +1,19 @@
 ﻿@model LifeDrop.Models.Agendamento
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <form asp-action="Salvar" id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+            <form asp-action="Editar" id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+                <input type="hidden" asp-for="IdAgendamento" />
                 <input type="hidden" asp-for="IdDoador" />
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
-                        <label for="f_titulo">Estado <span class="text-info">*</span></label>
-                        <select class="form-control" id="uf">
+                        <label asp-for="Unidade.Estado">Estado <span class="text-info">*</span></label>
+                        <select asp-for="Unidade.Estado" class="form-control" id="estado">
                             <option value="">Selecione seu estado</option>
                         </select>
                     </div>
@@ -16,7 +22,7 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Município <span class="text-info">*</span></label>
-                        <select class="form-control" id="municipio">
+                        <select asp-for="Unidade.Municipio" class="form-control" id="municipio">
                             <option value="">Selecione seu município</option>
                         </select>
                     </div>
@@ -58,53 +64,53 @@
     <div class="container mt-5">
         <div class="row text-center d-flex align-items-center">
             <div class="col-sm-12">
-                <h5 class="text-center">Estoque de sangue na unidade selecionada</h5>
+                <h5 class="text-center">Estoque de sangue no seu município</h5>
             </div>
         </div>
     </div>
 
 
-    <div class="container mt-5" id="divPostoColeta">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-2 mx-auto">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="2" class="text-center" id="postoColeta">-</th>
+                            <th colspan="2" class="text-center">Posto de coleta 1</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="text-center">O+</td>
-                            <td class="text-center" id="o_positivo">-</td>
+                            <td class="text-center">Critico</td>
                         </tr>
                         <tr>
                             <td class="text-center">O-</td>
-                            <td class="text-center" id="o_negativo">-</td>
+                            <td class="text-center">Alerta</td>
                         </tr>
                         <tr>
                             <td class="text-center">A+</td>
-                            <td class="text-center" id="a_positivo">-</td>
+                            <td class="text-center">Critico</td>
                         </tr>
                         <tr>
                             <td class="text-center">A-</td>
-                            <td class="text-center" id="a_negativo">-</td>
+                            <td class="text-center">Adequado</td>
                         </tr>
                         <tr>
                             <td class="text-center">B+</td>
-                            <td class="text-center" id="b_positivo">-</td>
+                            <td class="text-center">Estável</td>
                         </tr>
                         <tr>
                             <td class="text-center">B-</td>
-                            <td class="text-center" id="b_negativo">-</td>
+                            <td class="text-center">Alerta</td>
                         </tr>
                         <tr>
                             <td class="text-center">AB+</td>
-                            <td class="text-center" id="ab_positivo">-</td>
+                            <td class="text-center">Adequado</td>
                         </tr>
                         <tr>
                             <td class="text-center">AB-</td>
-                            <td class="text-center" id="ab_negativo">-</td>
+                            <td class="text-center">Critico</td>
                         </tr>
                     </tbody>
                 </table>
@@ -134,9 +140,7 @@
     // Preenche o select de estados (UF) em ordem alfabética
     async function popularEstados() {
         const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
-        const ufSelect = document.getElementById("uf");
-        const municipioSelect = document.getElementById("municipio");
-        const unidadeSelect = document.getElementById("unidade");
+        const ufSelect = document.getElementById("estado");
 
         try {
             const ufRequest = await fetch(urlUF);
@@ -155,6 +159,7 @@
             // Adiciona evento de mudança no select de UF
             ufSelect.addEventListener('change', async () => {
                 const selectedUF = ufSelect.value;
+                const municipioSelect = document.getElementById("municipio");
 
                 // Carrega municípios para a UF selecionada
                 const municipiosUrl = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUF}/municipios`;
@@ -170,65 +175,31 @@
 
                     municipioSelect.add(option);
                 });
+
+                // Adiciona evento de mudança no select de Municípios
+                municipioSelect.addEventListener('change', async () => {
+                    const selectedMunicipio = municipioSelect.value;
+                    const urlUnidades = `http://localhost:5050/AgendeDoacao/GetUnidades?municipio=${selectedMunicipio}`;
+                    const unidadeSelect = document.getElementById("unidade");
+
+                    try {
+                        const unidadesRequest = await fetch(urlUnidades);
+                        const unidadesResponse = await unidadesRequest.json();
+
+                        // Preenche o select de unidades
+                        unidadeSelect.innerHTML = '<option value="">Selecione a unidade</option>';
+                        unidadesResponse.forEach(function (unidadeData) {
+                            const option = document.createElement("option");
+                            option.value = unidadeData.idBancoDeSangue; // Substitua "id" pelo nome ou identificador da unidade
+                            option.text = unidadeData.nomeUnidade; // Substitua "nome" pelo campo correspondente na resposta da API
+
+                            unidadeSelect.add(option);
+                        });
+                    } catch (error) {
+                        console.error('Erro ao carregar unidades:', error);
+                    }
+                });
             });
-
-            // Adiciona evento de mudança no select de Municípios
-            municipioSelect.addEventListener('change', async () => {
-                const selectedMunicipio = municipioSelect.value;
-                const urlUnidades = `http://localhost:5050/AgendeDoacao/GetUnidades?municipio=${selectedMunicipio}`;
-
-                try {
-                    const unidadesRequest = await fetch(urlUnidades);
-                    const unidadesResponse = await unidadesRequest.json();
-
-                    // Preenche o select de unidades
-                    unidadeSelect.innerHTML = '<option value="">Selecione a unidade</option>';
-                    unidadesResponse.forEach(function (unidadeData) {
-                        const option = document.createElement("option");
-                        option.value = unidadeData.idBancoDeSangue; // Substitua "id" pelo nome ou identificador da unidade
-                        option.text = unidadeData.nomeUnidade; // Substitua "nome" pelo campo correspondente na resposta da API
-
-                        unidadeSelect.add(option);
-                    });
-                } catch (error) {
-                    console.error('Erro ao carregar unidades:', error);
-                }
-            });
-
-            unidadeSelect.addEventListener('change', async() =>{
-                const selectedUnidade = unidadeSelect.value;
-                const urlUnidade = `http://localhost:5050/AgendeDoacao/GetUnidade?id=${selectedUnidade}`;
-
-                try {
-                    const unidadeRequest = await fetch(urlUnidade);
-                    const unidadeResponse = await unidadeRequest.json();
-                    const oPositivo = document.getElementById("o_positivo");
-                    const oNegativo = document.getElementById("o_negativo");
-                    const aPositivo = document.getElementById("a_positivo");
-                    const aNegativo = document.getElementById("a_negativo");
-                    const bPositivo = document.getElementById("b_positivo");
-                    const bNegativo = document.getElementById("b_negativo");
-                    const abPositivo = document.getElementById("ab_positivo");
-                    const abNegativo = document.getElementById("ab_negativo");
-
-                    const postoColeta = document.getElementById("postoColeta");
-
-                    // Preenche os campos
-                    oPositivo.innerHTML = unidadeResponse.o_Positive;
-                    oNegativo.innerHTML = unidadeResponse.o_Negative;
-                    aPositivo.innerHTML = unidadeResponse.a_Positive;
-                    aNegativo.innerHTML = unidadeResponse.a_Negative;
-                    bPositivo.innerHTML = unidadeResponse.b_Positive;
-                    bNegativo.innerHTML = unidadeResponse.b_Negative;
-                    abPositivo.innerHTML = unidadeResponse.aB_Positive;
-                    abNegativo.innerHTML = unidadeResponse.aB_Negative;
-
-                    postoColeta.innerHTML = unidadeResponse.nomeUnidade
-                } catch (error) {
-                    console.error('Erro ao carregar unidade:', error);
-                }
-            });
-
         } catch (error) {
             console.error('Erro ao carregar UFs:', error);
         }
@@ -254,6 +225,40 @@
         }
     }
 
+    function popularDiasUteis() {
+        const dataSelect = document.getElementById("data");
+
+        // Limpa as opções existentes
+        dataSelect.innerHTML = '<option value="">...</option>';
+
+        const hoje = new Date();
+        const diasNoFuturo = 15;  // Ajuste conforme necessário
+
+        for (let i = 0; i <= diasNoFuturo; i++) {
+            const data = new Date();
+            data.setDate(hoje.getDate() + i);
+
+            // Verifica se o dia é útil (segunda a sexta)
+            if (data.getDay() >= 1 && data.getDay() <= 5) {
+                const option = document.createElement("option");
+                const dia = data.getDate().toString().padStart(2, '0');
+                const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+                const ano = data.getFullYear();
+                const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                option.value = dataFormatada;
+                option.text = dataFormatada;
+
+                dataSelect.add(option);
+            }
+        }
+    }
+
+    // Chama a função para popular as datas ao carregar a página
+    window.addEventListener('load', () => {
+        popularDiasUteis();
+    });
+
     // Chama a função para popular os horários ao carregar a página
     window.addEventListener('load', () => {
         popularHorarios();
@@ -268,6 +273,8 @@
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
 
         popularEstados();
+        popularDiasUteis();
+        popularHorarios();
     });
 
 
