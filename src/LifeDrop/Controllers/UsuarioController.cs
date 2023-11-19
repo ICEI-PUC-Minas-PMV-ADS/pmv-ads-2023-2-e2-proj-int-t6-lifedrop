@@ -80,7 +80,8 @@ namespace LifeDrop.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> CadastrarUsuario([Bind("Email,Nome,Senha,Perfil")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            
+            if (await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == usuario.Email) == null)
             {
                 usuario.Senha = BCrypt.Net.BCrypt.HashPassword(usuario.Senha);
                 _context.Add(usuario);
@@ -109,9 +110,9 @@ namespace LifeDrop.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        private bool UsuarioExists(int id)
+        private bool UsuarioExists(string Email)
         {
-            return _context.Usuarios.Any(e => e.IdUsuario == id);
+            return _context.Usuarios.Any(e => e.Email == Email);
         }
 
         /*
