@@ -130,10 +130,10 @@
                                 {
                                     <div class="card ml-6">
                                         <div class="px-2 my-2">
-                                            <p class="card-text"><b>Data:</b> @item.Data.Date</p>                                
+                                            <p class="card-text"><b>Data:</b> @item.Data.ToShortDateString()</p>                                
                                             <p class="card-text"><b>Hora: </b>@item.Hora</p>
                                             <p class="card-text"><b>Nome da unidade: </b>@item.Unidade.NomeUnidade</p>
-                                            <p class="card-text"><b>Endereço:</b>@item.Unidade.Endereco</p>
+                                            <p class="card-text"><b>Endereço: </b>@item.Unidade.Endereco</p>
                                         </div>
                                         <div class="text-end px-2 my-2">
                                             <input type="button" class="btn btn-primary" value="Alterar" onclick="location.href='@Url.Action("Editar", "AgendeDoacao", new { id = item.IdAgendamento })'" />
@@ -154,7 +154,7 @@
 
 @section Scripts {
     <script>
-        $('#telefoneInput').mask('(00) 0 0000.0000', { placeholder: "(__)_ ____ ____" });
+        $('#telefoneInput').mask('(00) 0 0000-0000', { placeholder: "(__)_ ____ ____" });
         $('#nascimentoInput').mask('00/00/0000', { placeholder: "__/__/____" });
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
     </script>

@@ -17,7 +17,7 @@ table {
     border-spacing: 15px;
     table-layout: fixed;
 }
-
+    
 .div_table {
     background-color: white;
     border-radius: 15px;
@@ -82,7 +82,8 @@ input:checked + .slider:before {
     .slider.round:before {
         border-radius: 50%;
     }
-.row {
+
+* .roww {
     position: absolute;
     top: 25%;
     left: 70%;
@@ -100,7 +101,6 @@ input:checked + .slider:before {
     left: 70%;
     top: 56%
 }
-
 .box {
     position: absolute;
     top: 82%;
@@ -113,32 +113,9 @@ fieldset {
     padding: 45px;
     padding-left: 124px;
     padding-right: 120px;
- 
 }
 
 #titulo-2 {
     text-align: center;
-    white-space: nowrap;
-}
-
-.tabela {
-    position: absolute;
-    top: 25%;
-    right: 60%;
-    background: #d3d3d3;
-    border-radius: 10px;
-    padding: 80px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
-.tabble {
-    font-size: 20px;
-    line-height: 40px;
-}
-
-#titulo-3 {
-    position: absolute;
-    right: 65%;
-    top: 20%;
     white-space: nowrap;
 }

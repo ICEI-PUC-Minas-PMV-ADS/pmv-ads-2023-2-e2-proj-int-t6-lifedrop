@@ -43,6 +43,13 @@ namespace LifeDrop.Controllers
             return unidades;
         }
 
+        public BancoDeSangue GetUnidade(int id)
+        {
+            var unidade = _context.BancosDeSangue.Find(id);
+
+            return unidade;
+        }
+
         public async Task<IActionResult> Salvar(Agendamento agendamento)
         {
             if (ModelState.IsValid)
