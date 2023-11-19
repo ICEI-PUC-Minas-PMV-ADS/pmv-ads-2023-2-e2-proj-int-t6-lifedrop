@@ -14,7 +14,7 @@
                         @Html.DisplayNameFor(model => model.Data)
                     </dt>
                     <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Data.Date)
+                        @Html.DisplayFor(model => model.Data)
                     </dd>
                     <dt class="col-sm-2">
                         @Html.DisplayNameFor(model => model.Hora)
@@ -42,15 +42,32 @@
                     </dd>
                 </dl>
 
-                <form asp-action="Cancelar">
+                <form asp-action="Cancelar" id="cancelar">
                     <input type="hidden" asp-for="IdAgendamento" />
                     <div class="text-center">
-                        <input type="submit" value="Confirmar" class="btn btn-primary" /> 
+                        <button type="button" class="btn btn-primary" onclick="confirmarCancelamento()">
+                            Confirmar
+                        </button>
                         <a asp-action="Index" asp-controller="MeuPerfil" class="btn btn-warning">Voltar</a>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
+    @section scripts {
+        <script>
+            function confirmarCancelamento() {
+               
+
+                // Exibe um alerta
+                if (confirm("Tem certeza que gostaria de cancelar este agendamento?")) {
+                    // Envie o formulário
+                    document.getElementById('cancelar').submit();
+                }
+            }
+        </script>
+    }
+
 </div>
 
