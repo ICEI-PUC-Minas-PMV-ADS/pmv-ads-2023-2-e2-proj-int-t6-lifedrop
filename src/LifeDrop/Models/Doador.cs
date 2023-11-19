@@ -35,6 +35,6 @@ namespace LifeDrop.Models
         [Required(ErrorMessage = "Obrigatório informar o Email")]
         public string Email { get; set; }
 
-        //public ICollection<Agendamento> Agendamentos { get; set; }
+        public List<Agendamento> Agendamentos { get; set; }
     }
 }

@@ -1,13 +1,19 @@
 ﻿@model LifeDrop.Models.Agendamento
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <form asp-action="Salvar" id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+            <form asp-action="Editar" id="form-contato" class="col-sm-6" style="background-color: #eaeaea;">
+                <input type="hidden" asp-for="IdAgendamento" />
                 <input type="hidden" asp-for="IdDoador" />
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
-                        <label for="f_titulo">Estado <span class="text-info">*</span></label>
-                        <select class="form-control" id="uf">
+                        <label asp-for="Unidade.Estado">Estado <span class="text-info">*</span></label>
+                        <select asp-for="Unidade.Estado" class="form-control" id="estado">
                             <option value="">Selecione seu estado</option>
                         </select>
                     </div>
@@ -16,7 +22,7 @@
                 <div class="row mt-3 justify-content-center">
                     <div class="col-sm-9">
                         <label for="f_titulo">Município <span class="text-info">*</span></label>
-                        <select class="form-control" id="municipio">
+                        <select asp-for="Unidade.Municipio" class="form-control" id="municipio">
                             <option value="">Selecione seu município</option>
                         </select>
                     </div>
@@ -42,35 +48,6 @@
                         </select>
                     </div>
                 </div>
-
-                @*   <div class="row mt-3 justify-content-center">
-                <div class="col-sm-9">
-                <label for="f_titulo">Nome completo <span class="text-info">*</span></label>
-                <input type="text" class="form-control" id="nomelInput">
-                </div>
-                </div>
-
-                <div class="row mt-3 justify-content-center">
-                <div class="col-sm-9">
-                <label for="f_titulo">E-mail<span class="text-info">*</span></label>
-                <input type="text" class="form-control" id="emailInput">
-                </div>
-                </div>
-
-                <div class="row mt-3 justify-content-center">
-                <div class="col-sm-3">
-                <label for="f_titulo">CPF<span class="text-info">*</span></label>
-                <input type="text" class="form-control" id="cpfInput">
-                </div>
-                <div class="col-sm-3 justify-content-center">
-                <label for="f_titulo">Telefone<span class="text-info">*</span></label>
-                <input type="text" class="form-control" id="telefoneInput">
-                </div>
-                <div class="col-sm-3 justify-content-center">
-                <label for="f_titulo">Nascimento <span class="text-info">*</span></label>
-                <input type="text" class="form-control" id="nascimentoInput">
-                </div>
-                </div>*@
 
                 <div class="row mt-5 text-center">
                     <div class="col-sm-12" style="margin-bottom: 15px;">
@@ -163,7 +140,7 @@
     // Preenche o select de estados (UF) em ordem alfabética
     async function popularEstados() {
         const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
-        const ufSelect = document.getElementById("uf");
+        const ufSelect = document.getElementById("estado");
 
         try {
             const ufRequest = await fetch(urlUF);
@@ -296,6 +273,8 @@
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
 
         popularEstados();
+        popularDiasUteis();
+        popularHorarios();
     });
 
 

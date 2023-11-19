@@ -23,5 +23,6 @@ namespace LifeDrop.Models
         public string Estado { get; set; }
         [Required(ErrorMessage = "Obrigatório informar o município")]
         public string Municipio { get; set; }
+        public List<Agendamento> Agendamentos { get; set; }
     }
 }

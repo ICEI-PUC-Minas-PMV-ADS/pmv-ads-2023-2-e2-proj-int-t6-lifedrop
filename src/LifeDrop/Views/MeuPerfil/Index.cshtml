@@ -124,18 +124,24 @@
                     <h5 class="text-center">Meus agendamentos</h5>
                     <div class="row mt-4">
                         <div class="col-sm-10 mx-auto">
-                            <div class="card ml-6">
-                                <div class="px-2 my-2">
-                                    <p class="card-text"><b>Data:</b> 10/11/2023</p>                                
-                                    <p class="card-text"><b>Hora: </b>14:00</p>
-                                    <p class="card-text"><b>Nome da unidade: </b>Hemominas</p>
-                                    <p class="card-text"><b>Endereço:</b> Rua Exemplo, 123, cep: 00000-000 </p>
-                                </div>
-                                <div class="text-end px-2 my-2">
-                                    <button type="button" class="btn btn-primary">Alterar</button>
-                                    <button type="button" class="btn btn-danger">Cancelar</button>
-                                </div>
-                            </div>
+                            @if (Model.Agendamentos != null && Model.Agendamentos.Any())
+                            {
+                                @foreach (var item in Model.Agendamentos.Where(a=>a.StatusDaDoacao == Status.Agendado))
+                                {
+                                    <div class="card ml-6">
+                                        <div class="px-2 my-2">
+                                            <p class="card-text"><b>Data:</b> @item.Data.Date</p>                                
+                                            <p class="card-text"><b>Hora: </b>@item.Hora</p>
+                                            <p class="card-text"><b>Nome da unidade: </b>@item.Unidade.NomeUnidade</p>
+                                            <p class="card-text"><b>Endereço:</b>@item.Unidade.Endereco</p>
+                                        </div>
+                                        <div class="text-end px-2 my-2">
+                                            <input type="button" class="btn btn-primary" value="Alterar" onclick="location.href='@Url.Action("Editar", "AgendeDoacao", new { id = item.IdAgendamento })'" />
+                                            <input type="button" class="btn btn-danger" value="Cancelar" onclick="location.href='@Url.Action("Cancelar", "AgendeDoacao", new { id = item.IdAgendamento })'" />
+                                        </div>
+                                    </div>
+                                }
+                            }
                         </div>
                     </div>
                 </div>
