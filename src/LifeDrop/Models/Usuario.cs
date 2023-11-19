@@ -25,8 +25,8 @@ namespace LifeDrop.Models
     }
     public enum Origem
     {
-        Doador,
-        Banco_De_Sangue
+        Doador = 0,
+        BancoDeSangue = 1
     }
 }
 
