@@ -8,11 +8,12 @@ Para cada caso de teste definido no Plano de Testes de Software, realize o regis
 
 CT - 03 - Gerenciar banco de sangue
 <ul>
-  <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue gerenciar e visualizar banco de sangue.</li>
+  <li><strong>Objetivo do teste</strong>:Verificar se o usuário consegue visualizar o banco de sangue.</li>
   <li><strong>Resultado</strong>: O estoque de sangue está visivel</li>
   </ul>
     
-<img src="/docs/img/estoque.png"></img>
+<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/1a776753-8305-439f-8063-95f4e91658b0">
+
 
 
 ## Tela de Meu Perfil
