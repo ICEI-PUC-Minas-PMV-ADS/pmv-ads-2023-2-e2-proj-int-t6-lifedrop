@@ -4,6 +4,27 @@
 
 Para cada caso de teste definido no Plano de Testes de Software, realize o registro das evidências dos testes feitos na aplicação pela equipe, que comprovem que o critério de êxito foi alcançado (ou não!!!). Para isso, utilize uma ferramenta de captura de tela que mostre cada um dos casos de teste definidos (obs.: cada caso de teste deverá possuir um vídeo do tipo _screencast_ para caracterizar uma evidência do referido caso).
 
+## Tela de cadastro de usuario
+
+CT - 01 - Cadastrar Usuario
+<ul>
+  <li><strong>Objetivo do teste</strong>: Verificar se o usuário consegue se cadastrar no site.</li>
+  <li><strong>Resultado</strong>: Após inserir os dados e clicar em registrar, o cadastro é feito e o usuário é redirecionado para a página de login </li>
+  </ul>
+
+<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/690cbaaa-dcaa-4216-b45c-9d534ac90726">
+
+## Tela de Login
+
+CT - 02 - Login de Usuario
+<ul>
+  <li><strong>Objetivo do teste</strong>: Verificar se o usuário consegue entrar no site com seu usuario.</li>
+  <li><strong>Resultado</strong>: Após inserir os dados e clicar em acessar, o cadastro é autorizado e o usuário é redirecionado para a página principal do doador ou banco de sangue </li>
+  </ul>
+    
+<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/ce596465-d1be-4627-a642-5ece155fcfaf">
+
+
 ## Tela de estoque banco de sangue
 
 CT - 03 - Gerenciar banco de sangue
