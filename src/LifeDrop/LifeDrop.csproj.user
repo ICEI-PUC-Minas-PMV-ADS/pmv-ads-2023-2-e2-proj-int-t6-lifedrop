@@ -13,6 +13,7 @@
     <ActiveDebugProfile>LifeDrop</ActiveDebugProfile>
     <WebStackScaffolding_DbContextTypeFullName>LifeDrop.Models.AppDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_ControllerDialogWidth>650</WebStackScaffolding_ControllerDialogWidth>
+    <NameOfLastUsedPublishProfile>C:\Users\natal\OneDrive\Área de Trabalho\Pastas\PUC\ProjetoLifeDrop\pmv-ads-2023-2-e2-proj-int-t6-lifedrop\src\LifeDrop\Properties\PublishProfiles\LifeDrop - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
