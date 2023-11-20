@@ -185,8 +185,8 @@
                     unidadeSelect.innerHTML = '<option value="">Selecione a unidade</option>';
                     unidadesResponse.forEach(function (unidadeData) {
                         const option = document.createElement("option");
-                        option.value = unidadeData.idBancoDeSangue; // Substitua "id" pelo nome ou identificador da unidade
-                        option.text = unidadeData.nomeUnidade; // Substitua "nome" pelo campo correspondente na resposta da API
+                        option.value = unidadeData.idBancoDeSangue; 
+                        option.text = unidadeData.nomeUnidade; 
 
                         unidadeSelect.add(option);
                     });
