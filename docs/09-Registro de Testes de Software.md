@@ -33,6 +33,14 @@ CT - 05 - Acessar histórico de doações
   
 <img width="954" alt="GerenciarAgendamento" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/fb55b34d-b1c8-44d6-8445-e9297b6e7636">
 
+CT - 06 - Verificação da aptidão do doador
+<ul>
+  <li><strong>Objetivo do teste</strong>:O sistema deve verificar se o doador está apto para a doação antes de permitir que o doador agende uma doação.</li>
+  <li><strong>Resultado</strong>: Doador apto, ou não, para realizar a doação</li>
+  </ul>
+  <img width="1345" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128405733/5b348cf1-a00a-4b48-94af-988eede06e02">
+
+
 CT - 02 - Gerenciar Login
 <ul>
   <li><strong>Objetivo do teste</strong>:O sistema deve permitir ao usuário gerenciar o login.</li>
