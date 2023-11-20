@@ -175,7 +175,7 @@
             // Adiciona evento de mudança no select de Municípios
             municipioSelect.addEventListener('change', async () => {
                 const selectedMunicipio = municipioSelect.value;
-                const urlUnidades = `http://localhost:5050/AgendeDoacao/GetUnidades?municipio=${selectedMunicipio}`;
+                const urlUnidades = window.location.href + `/GetUnidades?municipio=${selectedMunicipio}`;
 
                 try {
                     const unidadesRequest = await fetch(urlUnidades);
@@ -197,7 +197,7 @@
 
             unidadeSelect.addEventListener('change', async() =>{
                 const selectedUnidade = unidadeSelect.value;
-                const urlUnidade = `http://localhost:5050/AgendeDoacao/GetUnidade?id=${selectedUnidade}`;
+                const urlUnidade = window.location.href + `/GetUnidade?id=${selectedUnidade}`;
 
                 try {
                     const unidadeRequest = await fetch(urlUnidade);
