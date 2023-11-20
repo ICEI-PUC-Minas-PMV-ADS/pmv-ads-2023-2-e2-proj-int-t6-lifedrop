@@ -119,3 +119,30 @@ fieldset {
     text-align: center;
     white-space: nowrap;
 }
+
+.tb {
+    position: absolute;
+    top: 23%;
+    right: 55%;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding: 40px;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    padding-left: 20px;
+    width: 500px;
+}
+
+#titulo-3 {
+    position: absolute;
+    right: 58%;
+    top: 20%;
+    white-space: nowrap;
+}
+
+.btn-p {
+    position: absolute;
+    right: 78%;
+    top: 70%;
+}
+   
