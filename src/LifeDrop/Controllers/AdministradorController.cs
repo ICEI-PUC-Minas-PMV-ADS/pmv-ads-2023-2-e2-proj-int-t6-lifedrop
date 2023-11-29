@@ -20,7 +20,7 @@ namespace LifeDrop.Controllers
         public async Task<IActionResult> Agendamentos()
         {
 
-            var dadosAg = await _context.Agendamentos.Include(x => x.Doador).ToListAsync();
+            var dadosAg = await _context.Agendamentos.Include(x => x.Doador).OrderByDescending(a => a.Data).ToListAsync();
 
             return View(dadosAg);
         }
