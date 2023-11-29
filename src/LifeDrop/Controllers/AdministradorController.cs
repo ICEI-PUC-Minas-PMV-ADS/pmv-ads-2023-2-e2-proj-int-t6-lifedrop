@@ -1,18 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using LifeDrop.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LifeDrop.Controllers
 {
     public class AdministradorController : Controller
     {
+        private readonly AppDbContext _context;
+        public AdministradorController(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult PainelAdministrador()
         {
             return View("~/Views/PainelAdministrador/Index.cshtml");
         }
 
-        public IActionResult Agendamentos()
+        public async Task<IActionResult> Agendamentos()
         {
-            return View("~/Views/AgendamentosAdministrador/Index.cshtml");
-        }
 
+            var dadosAg = await _context.Agendamentos.ToListAsync();
+
+            return View(dadosAg);
+        }
     }
 }
