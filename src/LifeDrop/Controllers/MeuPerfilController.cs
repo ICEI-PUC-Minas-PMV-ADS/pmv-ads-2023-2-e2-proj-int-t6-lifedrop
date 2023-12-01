@@ -55,9 +55,6 @@ namespace LifeDrop.Controllers
 
                     _context.Doadores.Update(doadorExistente);
 
-                    _usuarioLogado.Nome = doador.Nome;
-                    _context.Usuarios.Update(_usuarioLogado);
-
                     await _context.SaveChangesAsync();
                     return RedirectToAction("Index");
                 }
