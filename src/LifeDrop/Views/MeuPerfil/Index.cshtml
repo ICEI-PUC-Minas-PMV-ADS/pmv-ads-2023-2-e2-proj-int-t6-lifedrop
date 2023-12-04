@@ -159,16 +159,17 @@
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
 
 
-        
-            document.addEventListener("DOMContentLoaded", function () {
-                console.log("JavaScript executado na segunda página.");
-                var meuDado = localStorage.getItem('meuDado');
 
-                if (meuDado !== null) {
-                    alert("Doação Emergencial: " + meuDado);
-                    localStorage.removeItem('meuDado');
-                }
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+            var meuDado = localStorage.getItem('meuDado');
+
+            if (meuDado !== null) {
+                alert("Solicitação emergencial do sangue: " + meuDado);
+
+                localStorage.removeItem('meuDado');
+            }
+        });
+
     </script>
     
 }
