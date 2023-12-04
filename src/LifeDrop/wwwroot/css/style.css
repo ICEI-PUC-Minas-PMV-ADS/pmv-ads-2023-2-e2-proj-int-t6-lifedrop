@@ -1,4 +1,6 @@
-* .roww {
+/*Informações do banco de sangue*/
+
+ .roww {
     position: absolute;
     top: 25%;
     left: 70%;
@@ -16,6 +18,9 @@
     left: 70%;
     top: 56%
 }
+
+/*Doacao Emergencial*/
+
 .box {
     position: absolute;
     top: 82%;
@@ -35,6 +40,18 @@ fieldset {
     white-space: nowrap;
 }
 
+/*Informações do banco de sangue*/
+table {
+    margin: 25px 20px 25px 20px;
+    width: 1260px;
+    height: 160px;
+    background-color: white;
+    border-radius: 15px;
+    border-collapse: separate;
+    border-spacing: 15px;
+    table-layout: fixed;
+}
+
 .tb {
     position: absolute;
     top: 23%;
@@ -48,9 +65,10 @@ fieldset {
     width: 500px;
 }
 
+
 #titulo-3 {
     position: absolute;
-    right: 58%;
+    right: 64%;
     top: 20%;
     white-space: nowrap;
 }
