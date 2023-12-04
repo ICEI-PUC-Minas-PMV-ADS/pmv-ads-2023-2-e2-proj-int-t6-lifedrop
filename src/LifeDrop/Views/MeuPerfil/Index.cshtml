@@ -157,5 +157,18 @@
         $('#telefoneInput').mask('(00) 0 0000-0000', { placeholder: "(__)_ ____ ____" });
         $('#nascimentoInput').mask('00/00/0000', { placeholder: "__/__/____" });
         $('#cpfInput').mask('000.000.000-00', { placeholder: "___.___.___-__" });
+
+
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("JavaScript executado na segunda página.");
+                var meuDado = localStorage.getItem('meuDado');
+
+                if (meuDado !== null) {
+                    alert("Doação Emergencial: " + meuDado);
+                    localStorage.removeItem('meuDado');
+                }
+            });
     </script>
+    
 }
