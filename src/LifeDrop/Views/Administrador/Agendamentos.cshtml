@@ -3,6 +3,35 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     ViewData["Title"] = "Agendamentos";
 }
+<head>
+    <style>
+        body {
+            background-color: #f3f4f4;
+        }
+
+        h1 {
+            color: #014AAD;
+            margin: 0px 15px 30px 15px;
+        }
+
+        table {
+            margin: 25px 20px 25px 20px;
+            width: 1260px;
+            height: 160px;
+            background-color: white;
+            border-radius: 15px;
+            border-collapse: separate;
+            border-spacing: 15px;
+            table-layout: fixed;
+        }
+    
+        .div_table {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0.3px 0.9px, rgba(0, 0, 0, 0.13) 0px 1.6px 3.6px;
+        }
+    </style>
+</head>
 <body> 
     <h1>Agendamentos </h1>
     @foreach (var item in Model)
