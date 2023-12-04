@@ -86,3 +86,11 @@ CT - 02 - Gerenciar Login
   <li><strong>Resultado</strong>:  O painel administrativo está visível</li>
   </ul>
   <img width="1920" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/130505215/44dc370f-616f-4f09-a3b5-f6d8d0aa8e21">
+
+   CT - 07 - Registro de emergências
+<ul>
+  <li><strong>Objetivo do teste</strong>:Verificar se o administrador consegue registrar emergências
+  <li><strong>Resultado</strong>: Registro de emergências </li>
+  </ul>
+  <img width="1917" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/130505215/f224c974-2ca8-45fd-82bf-bfcbc35dff5a">
+  <img width="1910" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/130505215/86194f3f-ed55-4085-9261-9953228c5b25">
