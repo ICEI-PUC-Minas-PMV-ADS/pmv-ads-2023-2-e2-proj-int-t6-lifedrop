@@ -4,27 +4,28 @@
 
 Para cada caso de teste definido no Plano de Testes de Usabilidade, realize o registro das evidências dos testes feitos na aplicação pela equipe, que comprovem que o critério de êxito foi alcançado (ou não!!!). Para isso, utilize uma ferramenta de captura de tela que mostre cada um dos casos de teste definidos (obs.: cada caso de teste deverá possuir um vídeo do tipo _screencast_ para caracterizar uma evidência do referido caso).
 
-## Tela de cadastro de usuario
+## Cadastrar, acessar, e fazer logout da conta 
+|Objetivo do Teste    | Sucesso | Resultado |
+|------|-----------------------------------------|----|
+| Verificar se o usuário consegue acessar por meio de outros dispositivos. |Sim | A tela se muda proporcional com a resolução do dispositivo utilizado|
+| Cadastrar conta de usuário doador | Sim | Cadastro realizado com sucesso |
+| Cadastrar conta de usuário administrador | Sim | Cadastro realizado com sucesso |
+| Fazer login de usuário doador, na opção administrador | Não | Login não efetuado |
+| Fazer login de usuário administrador, na opção doador | Não | Login não efetuado |
+| Fazer logout da conta doador e administrador | Sim | Logout realizado com sucesso |
 
-CT - 01 - Cadastrar Usuario
-<ul>
-  <li><strong>Objetivo do teste</strong>: Verificar se o usuário consegue acessar por meio de outros dispositivos.</li>
-  <li><strong>Resultado</strong>: A tela se muda proporcional com a resolução do dispositivo utilizado </li>
-  </ul>
+## Agendamentos 
+|Objetivo do Teste    | Sucesso | Resultado |
+|------|-----------------------------------------|----|
+|Fazer agendamento do usuário doador |Não| No primeiro acesso a conta precisa preencher as informações na página “Meu Perfil” para conseguir realizar o agendamento| 
+| Preencher todas as informações pessoais na página “Meu Perfil” | Sim | Informações salvas com sucesso |
+| Não preencher todas as informações pessoais na página “Meu Perfil” | Não | Informação não são salvas, precisa preencher todos os campos.
+| Fazer o agendamento após preencher as informações pessoais. | Sim | Agendamento realizado com sucesso. |
+| Clicar em “agendar doação” sem preencher todos os campos. | Não | O agendamento só é concluído quando preenche todos os campos. | 
+| Alterar e cancelar o agendamento na página “Meu Perfil” | Sim | Alteração realizada com sucesso. |
+| Acessar página de orientações sobre doação | Sim | Orientações sobre doação disponivel para leitura | 
 
-<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/690cbaaa-dcaa-4216-b45c-9d534ac90726">
-<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/b96694a6-ba1d-497d-8e76-43d83326cae7">
+## Painel Administrador 
+|Objetivo do Teste    | Sucesso | Resultado |
+|------|-----------------------------------------|----|
 
-## Tela de Login
-
-CT - 02 - Login de Usuario
-<ul>
-  <li><strong>Objetivo do teste</strong>: Verificar se o usuário consegue acessar por meio de outros dispositivos.</li>
-  <li><strong>Resultado</strong>: A tela se muda proporcional com a resolução do dispositivo utilizado </li>
-  </ul>
-    
-<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/ce596465-d1be-4627-a642-5ece155fcfaf">
-<img width="1290" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t6-lifedrop/assets/128004411/a0a26ca2-8f62-41e0-a298-94fb19049d79">
-
-> **Links Úteis**:
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
