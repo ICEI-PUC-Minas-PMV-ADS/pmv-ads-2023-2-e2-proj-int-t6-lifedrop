@@ -57,6 +57,10 @@ O link e o usuário/senha descritos acima são apenas exemplos de como tais info
 <li><a href="docs/13-Referências.md"> Referências</a></li>
 </ol>
 
+# Hospedagem
+
+* https://lifedrop.azurewebsites.net/
+
 # Código
 
 <li><a href="src/README.md"> Código Fonte</a></li>
