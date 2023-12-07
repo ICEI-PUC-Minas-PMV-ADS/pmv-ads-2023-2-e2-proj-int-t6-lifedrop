@@ -29,5 +29,5 @@ Para cada caso de teste definido no Plano de Testes de Usabilidade, realize o re
 |Objetivo do Teste    | Sucesso | Resultado |
 |------|-----------------------------------------|----|
 |Alterar agendamento de um doador |Sim| Após entrar no acesso administrador e selecionar o agendamento, foi possivel alterar e deletar o agendamento|
-|Deletar agendamento sem confirmar |Sim| Após clicar em deletar o agendamento, aparecerá uma pagina de confirmação, ao clicar em não, o cancelamento não é feito| 
+|Deletar agendamento sem confirmar |Não| Após clicar em deletar o agendamento, aparecerá uma pagina de confirmação, ao clicar em não, o cancelamento não é feito| 
 |Solicitar urgencia em um tipo sanguineo |Sim| Ao solicitar, um alerta aparece para todos usuarios do tipo sanguineo solicitado| 
